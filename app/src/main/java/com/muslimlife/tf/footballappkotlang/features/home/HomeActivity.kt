@@ -3,47 +3,38 @@ package com.muslimlife.tf.footballappkotlang.features.home
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.muslimlife.tf.footballappkotlang.R
-import com.muslimlife.tf.footballappkotlang.data.api.FootBallRest
-import com.muslimlife.tf.footballappkotlang.data.api.FootBallRestConstant
-import com.muslimlife.tf.footballappkotlang.data.api.FootBallRestService
 import com.muslimlife.tf.footballappkotlang.data.model.League
 import com.rahmat.app.footballclub.extensions.hide
 import com.rahmat.app.footballclub.extensions.show
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.home_activity.*
 import org.jetbrains.anko.design.snackbar
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(), HomeContract.View {
 
-    private lateinit var compositeDisposable: CompositeDisposable
+    private lateinit var selectedLeagueId: String
 
-    private lateinit var soccerLeagues: List<League>
-
-    lateinit var selectedLeagueId: String
-
-    private lateinit var service: FootBallRest
+    private lateinit var homePresenter: HomePresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        compositeDisposable = CompositeDisposable()
-        service = FootBallRestService.instance()
         setContentView(R.layout.home_activity)
-        //first loading
-        viewpager_main.hide()
-        tabs_main.hide()
-        getAllLeagues()
+        firstInitHomeView()
+        homePresenter = HomePresenter(this)
+        homePresenter.getAllLeagues()
     }
 
-    fun showRetryView() {
-        snackbar(home_view_root, getString(R.string.str_get_allleagues_failed),
-            getString(R.string.str_retry)) {getAllLeagues()}
+    override fun showGetAllLeaguesLoading() {
+        pb_home.show()
     }
 
-    fun onLoadLeaguesFinished(leagues: List<League>) {
+    override fun onGetAllLeaguesFailed() {
         pb_home.hide()
-        soccerLeagues = leagues.filter { league -> league.category == FootBallRestConstant.apiSoccerCategory }
+        snackbar(home_view_root, getString(R.string.str_get_allleagues_failed),
+            getString(R.string.str_retry)) {homePresenter.getAllLeagues()}
+    }
+
+    override fun onGetAllLeaguesSuccessed(soccerLeagues: List<League>) {
+        pb_home.hide()
         selectedLeagueId = soccerLeagues[0].id
         btn_selected_league.text = soccerLeagues[0].name
         viewpager_main.adapter = FootBallMatchScheduleAdapter(supportFragmentManager, selectedLeagueId,
@@ -53,26 +44,9 @@ class HomeActivity : AppCompatActivity() {
         tabs_main.show()
     }
 
-    fun getAllLeagues(){
-        pb_home.show()
-        compositeDisposable.add(service.getAllLeagues()
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeOn(Schedulers.io())
-            .subscribe({
-                onLoadLeaguesFinished(it.leagues)
-            }, {
-                pb_home.hide()
-                showRetryView()
-            }))
-    }
-
-    override fun onPause() {
-        super.onPause()
-        compositeDisposable.clear()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        compositeDisposable.clear()
+    private fun firstInitHomeView(){
+        //first loading
+        viewpager_main.hide()
+        tabs_main.hide()
     }
 }

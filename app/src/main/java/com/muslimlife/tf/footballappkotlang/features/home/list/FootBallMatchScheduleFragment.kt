@@ -7,22 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.muslimlife.tf.footballappkotlang.R
-import com.muslimlife.tf.footballappkotlang.data.api.FootBallRest
-import com.muslimlife.tf.footballappkotlang.data.api.FootBallRestService
 import com.muslimlife.tf.footballappkotlang.data.model.Event
 import com.rahmat.app.footballclub.extensions.hide
 import com.rahmat.app.footballclub.extensions.show
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.football_match_schedule_fragment.*
-import java.lang.UnsupportedOperationException
 
-class FootBallMatchScheduleFragment : Fragment() {
+class FootBallMatchScheduleFragment : Fragment(), FootBallMatchesScheduleContract.View {
 
-    private lateinit var compositeDisposable: CompositeDisposable
-
-    private lateinit var service: FootBallRest
+    private val matchesSchedulePresenter: FootBallMatchesSchedulePresenter = FootBallMatchesSchedulePresenter(this)
 
     companion object {
         const val previous_schedule = 0
@@ -45,47 +37,27 @@ class FootBallMatchScheduleFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        matchesSchedulePresenter.getMatchesScheduleByType(arguments?.getInt(arg_schedule_type),
+            arguments?.get(arg_league_id).toString())
+    }
+
+    override fun showGetMatchesScheduleLoading() {
         pb_loading_match_schedule.show()
-        compositeDisposable = CompositeDisposable()
-        service = FootBallRestService.instance()
-        when(arguments?.get(arg_schedule_type)) {
-            0 -> getLastFifteenSoccerMatchByLeagueId(arguments?.get(arg_league_id).toString())
-            1 -> getNextFifteenSoccerMatchByLeagueId(arguments?.get(arg_league_id).toString())
-            else -> throw UnsupportedOperationException()
-        }
     }
 
-    fun getLastFifteenSoccerMatchByLeagueId(id: String) {
-        compositeDisposable.add(service.getLastmatch(id)
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeOn(Schedulers.io())
-            .subscribe({
-                getMatchScheduleByTypeSuccess(it.events)
-            }, {
-                getMatchScheduleByTypeFailed()
-            }))
-    }
-
-    fun getNextFifteenSoccerMatchByLeagueId(id: String) {
-        compositeDisposable.add(service.getUpcomingMatch(id)
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeOn(Schedulers.io())
-            .subscribe({
-                getMatchScheduleByTypeSuccess(it.events)
-            }, {
-                getMatchScheduleByTypeFailed()
-            }))
-    }
-
-    fun getMatchScheduleByTypeSuccess(matchScheduleList: List<Event>) {
-        pb_loading_match_schedule.hide()
+    override fun onGetMatchesScheduleSuccessed(matchScheduleList: List<Event>) {
+        hideGetMatchesScheduleLoading()
         val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         rv_match_schedule.layoutManager = layoutManager
         rv_match_schedule.adapter =
                 MatchScheduleAdapter(matchScheduleList, context)
     }
 
-    fun getMatchScheduleByTypeFailed() {
+    override fun onGetMatchesScheduleFailed() {
+        hideGetMatchesScheduleLoading()
+    }
+
+    private fun hideGetMatchesScheduleLoading(){
         pb_loading_match_schedule.hide()
     }
 
