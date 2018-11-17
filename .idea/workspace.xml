@@ -19,17 +19,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/HomeFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/list/FootBallMatchScheduleFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/list/FootBallMatchScheduleFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/main/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/main/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/data/db/FavoriteMatchLocalDb.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/data/db/FavoriteMatchLocalDb.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,20 +57,20 @@
       <file leaf-file-name="FootBallMatchScheduleFragment.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/list/FootBallMatchScheduleFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+            <state relative-caret-position="345">
+              <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeFragment.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomeFragment.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/HomeFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+            <state relative-caret-position="251">
+              <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
               <folding>
-                <element signature="e#1780#1824#1" expanded="true" />
-                <element signature="e#1838#1867#1" expanded="true" />
+                <element signature="e#1616#1660#1" expanded="true" />
+                <element signature="e#1674#1703#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -87,7 +80,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/main/MainActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
-              <caret line="19" column="58" lean-forward="true" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+              <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -101,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FavoriteMatchLocalDb.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FavoriteMatchLocalDb.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/data/db/FavoriteMatchLocalDb.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="70" column="37" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
+            <state relative-caret-position="289">
+              <caret line="70" column="77" selection-start-line="70" selection-start-column="77" selection-end-line="70" selection-end-column="77" />
             </state>
           </provider>
         </entry>
@@ -2580,7 +2573,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/favorite/FootBallMatchesScheduleContract.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/detail_activity_options_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/data/db/DbConstant.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/data/db/FavoriteMatchLocalDb.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/data/db/LocalSqliteOpenHelpster.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/data/model/FavoriteMatch.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/favorite/FavoritesMatchAdapter.kt" />
@@ -2615,6 +2607,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/list/FootBallMatchScheduleFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/main/MainActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/HomeFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/data/db/FavoriteMatchLocalDb.kt" />
       </list>
     </option>
   </component>
@@ -3050,104 +3043,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/data/db/FavoriteMatchLocalDb.kt</url>
-          <line>57</line>
-          <properties />
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/data/db/FavoriteMatchLocalDb.kt</url>
-          <line>38</line>
-          <properties />
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/data/db/FavoriteMatchLocalDb.kt</url>
-          <line>60</line>
-          <properties />
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.anko/anko-sqlite/0.10.5/3478608eb28aead4f789f0e8b7261ee786944bd3/anko-sqlite-0.10.5-sources.jar!/SelectQueryBuilder.kt</url>
-          <line>41</line>
-          <properties />
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailActivity.kt</url>
-          <line>226</line>
-          <properties />
-          <option name="timeStamp" value="75" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailActivity.kt</url>
-          <line>229</line>
-          <properties />
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/list/FootBallMatchesSchedulePresenter.kt</url>
-          <line>33</line>
-          <properties />
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/list/FootBallMatchesSchedulePresenter.kt</url>
-          <line>45</line>
-          <properties />
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailActivity.kt</url>
-          <line>141</line>
-          <properties />
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/HomeFragment.kt</url>
-          <line>58</line>
-          <properties />
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/HomeFragment.kt</url>
-          <line>68</line>
-          <properties />
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/HomeFragment.kt</url>
-          <line>40</line>
-          <properties />
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/FootBallMatchScheduleAdapter.kt</url>
-          <line>19</line>
-          <properties />
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/FootBallMatchScheduleAdapter.kt</url>
-          <line>21</line>
-          <properties />
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/FootBallMatchScheduleAdapter.kt</url>
-          <line>20</line>
-          <properties />
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/HomeFragment.kt</url>
-          <line>34</line>
-          <properties />
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -3199,6 +3094,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="64" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
+          <folding>
+            <element signature="e#57#163#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3338,13 +3236,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/data/db/FavoriteMatchLocalDb.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="70" column="37" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailContract.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -3373,6 +3264,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="104" column="20" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="20" />
+          <folding>
+            <element signature="e#62#586#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3495,8 +3389,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/list/FootBallMatchScheduleFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        <state relative-caret-position="345">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -3513,18 +3407,25 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/main/MainActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="19" column="58" lean-forward="true" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+          <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/HomeFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="52" column="4" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
+        <state relative-caret-position="251">
+          <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
           <folding>
-            <element signature="e#1780#1824#1" expanded="true" />
-            <element signature="e#1838#1867#1" expanded="true" />
+            <element signature="e#1616#1660#1" expanded="true" />
+            <element signature="e#1674#1703#1" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/data/db/FavoriteMatchLocalDb.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="70" column="77" selection-start-line="70" selection-start-column="77" selection-end-line="70" selection-end-column="77" />
         </state>
       </provider>
     </entry>

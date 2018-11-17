@@ -68,7 +68,7 @@ class FavoriteMatchLocalDb(private val context: Context) {
             try {
                 context.localDb.use {
                     val result = select(DbConstant.Companion.FavoriteMatchTable.name).parseList(classParser<FavoriteMatch>())
-                    it.onNext(result)
+                    it.onNext( result.sortedByDescending { it -> it.id } )
                 }
             } catch (e: SQLiteException) {
                 it.onError(e)
