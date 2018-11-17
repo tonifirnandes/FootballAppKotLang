@@ -19,10 +19,9 @@ import org.jetbrains.anko.design.snackbar
 
 class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailContract.View {
 
-    private val matchScheduleDetailPresenter: MatchScheduleDetailPresenter = MatchScheduleDetailPresenter(this)
+    private val matchScheduleDetailPresenter: MatchScheduleDetailPresenter = MatchScheduleDetailPresenter()
     private var menuItem: Menu? = null
     private var isFavoriteMatch: Boolean = false
-    private var isCheckingFavoriteMatch: Boolean = true
     private var event: Event? = null
     private var favoriteEvent: FavoriteMatch? = null
 
@@ -36,7 +35,13 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
         setContentView(R.layout.match_schedule_detail_activity)
         event = intent.getParcelableExtra(arg_match_bundle_key)
         favoriteEvent = intent.getParcelableExtra(arg_favorite_match_bundle_key)
+        matchScheduleDetailPresenter.attach(this)
         matchScheduleDetailPresenter.setupView(event, favoriteEvent)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        matchScheduleDetailPresenter.detach()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -93,17 +98,22 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
         hideDetailActivityActionLoading()
     }
 
+    override fun onSaveFavoriteMatchSuccess() {
+        snackbar(sv_detail_root_view, getString(R.string.str_save_favorite_success))
+    }
+
+    override fun onUnFavoriteMatchSuccess() {
+        snackbar(sv_detail_root_view, getString(R.string.str_delete_favorite_success))
+    }
+
     override fun onSetFavoriteView(isFavorite: Boolean) {
         hideDetailActivityActionLoading()
         isFavoriteMatch = isFavorite
         if (isFavorite) {
-            if(!isCheckingFavoriteMatch) snackbar(sv_detail_root_view, getString(R.string.str_save_favorite_success))
             menuItem?.getItem(0)?.icon = ContextCompat.getDrawable(this, ic_favorited)
         } else {
-            if(!isCheckingFavoriteMatch) snackbar(sv_detail_root_view, getString(R.string.str_delete_favorite_success))
             menuItem?.getItem(0)?.icon = ContextCompat.getDrawable(this, ic_add_to_favorites)
         }
-        isCheckingFavoriteMatch = false
     }
 
     override fun onUnFavoriteMatchLoading() {
@@ -213,7 +223,9 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
     }
 
     private fun addToFavorite(){
-        if(isCheckingFavoriteMatch || event == null) return
+        if(event == null) {
+            return
+        }
         if(!isFavoriteMatch) {
             matchScheduleDetailPresenter.saveFavoriteMatch(event!!, this)
         } else {

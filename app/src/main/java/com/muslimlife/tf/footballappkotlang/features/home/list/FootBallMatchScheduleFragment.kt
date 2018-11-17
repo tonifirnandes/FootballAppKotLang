@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.football_match_schedule_fragment.*
 
 class FootBallMatchScheduleFragment : Fragment(), FootBallMatchesScheduleContract.View {
 
-    private val matchesSchedulePresenter: FootBallMatchesSchedulePresenter = FootBallMatchesSchedulePresenter(this)
+    private val matchesSchedulePresenter: FootBallMatchesSchedulePresenter = FootBallMatchesSchedulePresenter()
 
     companion object {
         const val previous_schedule = 0
@@ -37,8 +37,14 @@ class FootBallMatchScheduleFragment : Fragment(), FootBallMatchesScheduleContrac
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        matchesSchedulePresenter.attach(this)
         matchesSchedulePresenter.getMatchesScheduleByType(arguments?.getInt(arg_schedule_type),
             arguments?.get(arg_league_id).toString())
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        matchesSchedulePresenter.detach()
     }
 
     override fun showGetMatchesScheduleLoading() {

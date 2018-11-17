@@ -19,7 +19,8 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_activity)
         firstInitHomeView()
-        homePresenter = HomePresenter(this)
+        homePresenter = HomePresenter()
+        homePresenter.attach(this)
         homePresenter.getAllLeagues()
     }
 
@@ -48,5 +49,10 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
         //first loading
         viewpager_main.hide()
         tabs_main.hide()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        homePresenter.detach()
     }
 }

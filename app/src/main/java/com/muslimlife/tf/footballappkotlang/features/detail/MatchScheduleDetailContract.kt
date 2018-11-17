@@ -3,17 +3,21 @@ package com.muslimlife.tf.footballappkotlang.features.detail
 import android.content.Context
 import com.muslimlife.tf.footballappkotlang.data.model.Event
 import com.muslimlife.tf.footballappkotlang.data.model.FavoriteMatch
+import com.muslimlife.tf.footballappkotlang.generics.BaseMvpPresenter
+import com.muslimlife.tf.footballappkotlang.generics.BaseView
 
 interface MatchScheduleDetailContract {
-    interface View{
+    interface View: BaseView{
         fun onGetHomeTeamBadgeSuccessed(url: String)
         fun onGetAwayTeamBadgeFailed()
         fun onGetAwayTeamBadgeSuccessed(url: String)
         fun onGetHomeTeamBadgeFailed()
         fun onSaveFavoriteMatchLoading()
+        fun onSaveFavoriteMatchSuccess()
         fun onSaveFavoriteMatchFailed()
         fun onSetFavoriteView(isFavorite: Boolean)
         fun onUnFavoriteMatchLoading()
+        fun onUnFavoriteMatchSuccess()
         fun onUnFavoriteMatchFailed()
         fun onSetupViewFailed(isRetryAble: Boolean)
         fun onSetupViewSuccessed(eventLoaded: Event)
@@ -23,7 +27,7 @@ interface MatchScheduleDetailContract {
         fun hideDetailActivityActionLoading()
     }
 
-    interface Presenter {
+    interface Presenter: BaseMvpPresenter<MatchScheduleDetailContract.View> {
         fun setupView(event: Event?, favoriteEvent: FavoriteMatch?)
         fun getEventDetailsById(eventId: String)
         fun getHomeTeamBadge(id: String)

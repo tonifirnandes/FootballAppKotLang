@@ -6,12 +6,13 @@ import com.muslimlife.tf.footballappkotlang.data.api.FootBallRestService
 import com.muslimlife.tf.footballappkotlang.data.db.FavoriteMatchLocalDb
 import com.muslimlife.tf.footballappkotlang.data.model.FavoriteMatch
 import com.muslimlife.tf.footballappkotlang.data.model.Event
+import com.muslimlife.tf.footballappkotlang.generics.BasePresenter
 
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class MatchScheduleDetailPresenter(private val matchScheduleView: MatchScheduleDetailActivity) : MatchScheduleDetailContract.Presenter {
+class MatchScheduleDetailPresenter: MatchScheduleDetailContract.Presenter, BasePresenter<MatchScheduleDetailContract.View>() {
 
     private var compositeDisposable: CompositeDisposable = CompositeDisposable()
 
@@ -19,7 +20,7 @@ class MatchScheduleDetailPresenter(private val matchScheduleView: MatchScheduleD
 
     override fun setupView(event: Event?, favoriteEvent: FavoriteMatch?) {
         if(event != null) {
-            matchScheduleView.onSetupViewSuccessed(event)
+            view?.onSetupViewSuccessed(event)
             return
         }
 
@@ -28,18 +29,18 @@ class MatchScheduleDetailPresenter(private val matchScheduleView: MatchScheduleD
             return
         }
 
-        matchScheduleView.onSetupViewFailed(false)
+        view?.onSetupViewFailed(false)
     }
 
     override fun getEventDetailsById(eventId: String) {
-        matchScheduleView.showDetailActivityActionLoading()
+        view?.showDetailActivityActionLoading()
         compositeDisposable.add(service.getMatchDetail(eventId)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .subscribe({
-                matchScheduleView.onSetupViewSuccessed(it.events[0])
+                view?.onSetupViewSuccessed(it.events[0])
             }, {
-                matchScheduleView.onSetupViewFailed(true)
+                view?.onSetupViewFailed(true)
             }))
     }
 
@@ -48,9 +49,9 @@ class MatchScheduleDetailPresenter(private val matchScheduleView: MatchScheduleD
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .subscribe({
-                matchScheduleView.onGetHomeTeamBadgeSuccessed(it.teams[0].badgeUrl)
+                view?.onGetHomeTeamBadgeSuccessed(it.teams[0].badgeUrl)
             }, {
-                matchScheduleView.onGetHomeTeamBadgeFailed()
+                view?.onGetHomeTeamBadgeFailed()
             }))
     }
 
@@ -59,15 +60,18 @@ class MatchScheduleDetailPresenter(private val matchScheduleView: MatchScheduleD
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .subscribe({
-                matchScheduleView.onGetAwayTeamBadgeSuccessed(it.teams[0].badgeUrl)
+                view?.onGetAwayTeamBadgeSuccessed(it.teams[0].badgeUrl)
             }, {
-                matchScheduleView.onGetAwayTeamBadgeFailed()
+                view?.onGetAwayTeamBadgeFailed()
             }))
     }
 
     override fun saveFavoriteMatch(event: Event, context: Context?) {
-        if(context == null) return matchScheduleView.onSaveFavoriteMatchFailed()
-        matchScheduleView.onSaveFavoriteMatchLoading()
+        if(context == null) {
+            view?.onSaveFavoriteMatchFailed()
+            return
+        }
+        view?.onSaveFavoriteMatchLoading()
         compositeDisposable.add(
             FavoriteMatchLocalDb(context).create(
             FavoriteMatch(
@@ -82,34 +86,42 @@ class MatchScheduleDetailPresenter(private val matchScheduleView: MatchScheduleD
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .subscribe({
-                matchScheduleView.onSetFavoriteView(true)
+                view?.onSetFavoriteView(true)
+                view?.onSaveFavoriteMatchSuccess()
             }, {
-                matchScheduleView.onSaveFavoriteMatchFailed()
+                view?.onSaveFavoriteMatchFailed()
             }))
     }
 
     override fun isFavoriteMatch(matchId: String, context: Context?) {
-        if(context == null) return matchScheduleView.onSaveFavoriteMatchFailed()
+        if(context == null) {
+            view?.onSaveFavoriteMatchFailed()
+            return
+        }
         compositeDisposable.add(
             FavoriteMatchLocalDb(context).isFavorite(matchId)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe{
-                    matchScheduleView.onSetFavoriteView(it)
+                    view?.onSetFavoriteView(it)
                 })
     }
 
     override fun unFavoriteMatch(matchId: String, context: Context?) {
-        if(context == null) return matchScheduleView.onSaveFavoriteMatchFailed()
-        matchScheduleView.onUnFavoriteMatchLoading()
+        if(context == null) {
+            view?.onSaveFavoriteMatchFailed()
+            return
+        }
+        view?.onUnFavoriteMatchLoading()
         compositeDisposable.add(
             FavoriteMatchLocalDb(context).delete(matchId)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe({
-                    matchScheduleView.onSetFavoriteView(false)
+                    view?.onSetFavoriteView(false)
+                    view?.onUnFavoriteMatchSuccess()
                 }, {
-                    matchScheduleView.onUnFavoriteMatchFailed()
+                    view?.onUnFavoriteMatchFailed()
                 }))
     }
 }

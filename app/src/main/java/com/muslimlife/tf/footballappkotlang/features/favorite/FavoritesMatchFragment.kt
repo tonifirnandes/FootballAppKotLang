@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.football_match_schedule_fragment.*
 
 class FavoritesMatchFragment : Fragment(), FavoritesMatchContract.View {
 
-    private val matchesSchedulePresenter: FavoritesMatchPresenter = FavoritesMatchPresenter(this)
+    private val matchesSchedulePresenter: FavoritesMatchPresenter = FavoritesMatchPresenter()
 
     companion object {
         fun newInstance() : FavoritesMatchFragment = FavoritesMatchFragment()
@@ -24,10 +24,21 @@ class FavoritesMatchFragment : Fragment(), FavoritesMatchContract.View {
         return inflater.inflate(R.layout.football_match_schedule_fragment, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        matchesSchedulePresenter.attach(this)
+    }
+
     override fun onResume() {
         super.onResume()
         matchesSchedulePresenter.getSavedFavoritesMatchLocally(context)
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        matchesSchedulePresenter.detach()
+    }
+
     override fun showGetFavoritesMatchLoading() {
         pb_loading_match_schedule.show()
     }
