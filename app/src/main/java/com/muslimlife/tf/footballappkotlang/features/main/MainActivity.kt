@@ -14,19 +14,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
-        val homeFragment = HomeFragment.newInstance()
-        homeFragment.setOnLeagueSelectedListener{
-            supportActionBar?.title = it
-        }
-        val favoriteFragment = FavoritesMatchFragment.newInstance()
         bnv_main.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_home -> {
-                    replaceContainer(homeFragment)
+                    replaceContainer(HomeFragment.newInstance())
                     true
                 }
                 R.id.nav_favorite -> {
-                    replaceContainer(favoriteFragment)
+                    replaceContainer(FavoritesMatchFragment.newInstance())
                     true
                 }
                 else -> {
