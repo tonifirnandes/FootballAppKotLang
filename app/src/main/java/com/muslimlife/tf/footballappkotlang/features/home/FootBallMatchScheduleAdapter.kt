@@ -3,6 +3,7 @@ package com.muslimlife.tf.footballappkotlang.features.home
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
+import com.muslimlife.tf.footballappkotlang.features.favorite.FavoritesMatchFragment
 import com.muslimlife.tf.footballappkotlang.features.home.list.FootBallMatchScheduleFragment
 
 class FootBallMatchScheduleAdapter(fm: FragmentManager,
@@ -19,6 +20,7 @@ class FootBallMatchScheduleAdapter(fm: FragmentManager,
         return when(p0) {
             0 -> FootBallMatchScheduleFragment.newInstance(FootBallMatchScheduleFragment.previous_schedule, leagueId)
             1 -> FootBallMatchScheduleFragment.newInstance(FootBallMatchScheduleFragment.next_schedule, leagueId)
+            2 -> FavoritesMatchFragment.newInstance()
             else -> Fragment()
         }
     }
@@ -27,6 +29,7 @@ class FootBallMatchScheduleAdapter(fm: FragmentManager,
         return when(position) {
             0 -> scheduleTypes[0]
             1 -> scheduleTypes[1]
+            2 -> scheduleTypes[2]
             else -> ""
         }
     }

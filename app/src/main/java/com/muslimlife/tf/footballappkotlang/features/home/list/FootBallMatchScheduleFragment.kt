@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.muslimlife.tf.footballappkotlang.R
 import com.muslimlife.tf.footballappkotlang.data.model.Event
-import com.rahmat.app.footballclub.extensions.hide
-import com.rahmat.app.footballclub.extensions.show
+import com.muslimlife.tf.footballappkotlang.extensions.hide
+import com.muslimlife.tf.footballappkotlang.extensions.show
 import kotlinx.android.synthetic.main.football_match_schedule_fragment.*
 
 class FootBallMatchScheduleFragment : Fragment(), FootBallMatchesScheduleContract.View {

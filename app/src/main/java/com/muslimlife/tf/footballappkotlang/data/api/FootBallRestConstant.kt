@@ -7,6 +7,7 @@ class FootBallRestConstant {
         const val lastFifteenMatchesEndPoint = "eventspastleague.php"
         const val nextFifteenMatchesEndPoint = "eventsnextleague.php"
         const val teamDetailsEndPoint = "lookupteam.php"
+        const val eventDetailsEndPoint = "lookupevent.php"
         const val queryParamsId = "id"
         const val apiSoccerCategory = "Soccer"
     }

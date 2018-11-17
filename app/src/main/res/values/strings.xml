@@ -2,7 +2,15 @@
     <string name="app_name">FootBallAppKotLang</string>
     <string name="str_versus">VS</string>
     <string name="str_retry">Retry</string>
-    <string name="str_get_allleagues_failed">Sorry, There was something wrong</string>
+    <string name="str_back">Back</string>
+    <string name="str_generic_error_failed">Sorry, There was something wrong</string>
+    <string name="str_save_favorite_success">Add to favorite success</string>
+    <string name="str_save_favorite_failed">Add to favorite failed</string>
+    <string name="str_delete_favorite_success">Remove from favorite success</string>
+    <string name="str_delete_favorite_failed">Remove from favorite failed</string>
+
+
+
 
     <!--league loading state-->
     <string name="str_get_allleagues_loading">Loading LEAGUES &#8230;</string>
@@ -11,6 +19,7 @@
     <string-array name="schedule_types">
         <item>Last Match</item>
         <item>Next Match</item>
+        <item>Favorites</item>
     </string-array>
 
     <!--match details view-->
@@ -22,5 +31,7 @@
     <string name="str_lineups_midfield_detail_title">Midfield</string>
     <string name="str_lineups_forward_detail_title">Forward</string>
     <string name="str_lineups_subtitutes_detail_title">Subtitutes</string>
+    <string name="str_detail_favorite_option_menu">Favorite</string>
+
 
 </resources>

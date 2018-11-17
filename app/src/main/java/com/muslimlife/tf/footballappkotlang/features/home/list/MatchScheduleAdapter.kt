@@ -30,7 +30,7 @@ class MatchScheduleAdapter(private val scheduleList:List<Event>, private val con
 
     inner class ClubViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(event: Event){
-            itemView.tv_schedule_date.text = event.date?.adjustTimePattern(Utils.originEventDateTimeFormat,
+            itemView.tv_schedule_date.text = event.date.adjustTimePattern(Utils.originEventDateTimeFormat,
                 Utils.matchEventDateTimeFormat)
             itemView.tv_hometeam_name.text = event.homeTeamName
             itemView.tv_hometeam_score.text = event.homeScoreNumber

@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.muslimlife.tf.footballappkotlang.R
 import com.muslimlife.tf.footballappkotlang.data.model.League
-import com.rahmat.app.footballclub.extensions.hide
-import com.rahmat.app.footballclub.extensions.show
+import com.muslimlife.tf.footballappkotlang.extensions.hide
+import com.muslimlife.tf.footballappkotlang.extensions.show
 import kotlinx.android.synthetic.main.home_activity.*
 import org.jetbrains.anko.design.snackbar
 
@@ -29,7 +29,7 @@ class HomeActivity : AppCompatActivity(), HomeContract.View {
 
     override fun onGetAllLeaguesFailed() {
         pb_home.hide()
-        snackbar(home_view_root, getString(R.string.str_get_allleagues_failed),
+        snackbar(home_view_root, getString(R.string.str_generic_error_failed),
             getString(R.string.str_retry)) {homePresenter.getAllLeagues()}
     }
 

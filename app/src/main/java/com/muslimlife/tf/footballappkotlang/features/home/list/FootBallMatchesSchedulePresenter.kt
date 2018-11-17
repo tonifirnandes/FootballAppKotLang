@@ -11,7 +11,10 @@ class FootBallMatchesSchedulePresenter(private val matchesScheduleView: FootBall
     private var compositeDisposable = CompositeDisposable()
     private var service = FootBallRestService.instance()
 
-    override fun getMatchesScheduleByType(scheduleType: Int?, leagueId: String) {
+    override fun getMatchesScheduleByType(
+        scheduleType: Int?,
+        leagueId: String
+    ) {
         when(scheduleType) {
             0 -> getLastFifteenSoccerMatchByLeagueId(leagueId)
             1 -> getNextFifteenSoccerMatchByLeagueId(leagueId)
@@ -42,5 +45,4 @@ class FootBallMatchesSchedulePresenter(private val matchesScheduleView: FootBall
                 matchesScheduleView.onGetMatchesScheduleFailed()
             }))
     }
-
 }

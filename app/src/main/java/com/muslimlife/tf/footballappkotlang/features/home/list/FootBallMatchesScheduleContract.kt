@@ -10,6 +10,9 @@ interface FootBallMatchesScheduleContract {
     }
 
     interface Presenter{
-        fun getMatchesScheduleByType(scheduleType: Int?, leagueId: String)
+        fun getMatchesScheduleByType(
+            scheduleType: Int?,
+            leagueId: String
+        )
     }
 }

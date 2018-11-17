@@ -15,6 +15,9 @@ interface FootBallRest {
     @GET(FootBallRestConstant.nextFifteenMatchesEndPoint)
     fun getUpcomingMatch(@Query(FootBallRestConstant.queryParamsId) id:String) : Flowable<Events>
 
+    @GET(FootBallRestConstant.eventDetailsEndPoint)
+    fun getMatchDetail(@Query(FootBallRestConstant.queryParamsId) matchId: String): Flowable<Events>
+
     @GET(FootBallRestConstant.teamDetailsEndPoint)
     fun getTeam(@Query(FootBallRestConstant.queryParamsId) id:String) : Flowable<Teams>
 

@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class FootBallRestService {
     companion object {
-        fun httpClient() : Retrofit {
+        private fun httpClient() : Retrofit {
             return Retrofit.Builder()
                 .baseUrl(FootBallRestConstant.baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
