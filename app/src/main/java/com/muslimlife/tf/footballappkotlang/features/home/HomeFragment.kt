@@ -16,7 +16,6 @@ class HomeFragment : Fragment(), HomeContract.View {
 
     private lateinit var selectedLeagueId: String
     private lateinit var selectedLeagueName: String
-    private lateinit var listener: (leagueName: String) -> Unit
 
     private val homePresenter: HomePresenter = HomePresenter()
 
@@ -54,7 +53,6 @@ class HomeFragment : Fragment(), HomeContract.View {
         pb_home.hide()
         selectedLeagueId = soccerLeagues[0].id
         selectedLeagueName = soccerLeagues[0].name
-        listener(selectedLeagueName)
         viewpager_main.adapter = FootBallMatchScheduleAdapter(fragmentManager!!, selectedLeagueId,
             resources.getStringArray(R.array.schedule_types))
         tabs_main.setupWithViewPager(viewpager_main)
@@ -66,10 +64,6 @@ class HomeFragment : Fragment(), HomeContract.View {
         //first loading
         viewpager_main.hide()
         tabs_main.hide()
-    }
-
-    fun setOnLeagueSelectedListener(eventListener: (leagueName: String) -> Unit) {
-        listener = eventListener
     }
 
 }
