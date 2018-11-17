@@ -14,6 +14,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+        <ProgressBar
+                android:id="@+id/pb_loading_detail_activity_action"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
         <!--match summary view-->
         <android.support.v7.widget.CardView
             android:id="@+id/cv_match_summary"
@@ -516,14 +522,6 @@
 
         </android.support.v7.widget.CardView>
 
-
-
     </RelativeLayout>
-
-    <ProgressBar
-            android:id="@+id/pb_loading_detail_activity_action"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
 </ScrollView>
