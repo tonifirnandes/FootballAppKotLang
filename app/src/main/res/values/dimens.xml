@@ -4,4 +4,5 @@
     <dimen name="small_space_size">4dp</dimen>
     <dimen name="normal_space_size">8dp</dimen>
     <dimen name="medium_space_size">16dp</dimen>
+    <dimen name="bnv_main_size">56dp</dimen>
 </resources>
