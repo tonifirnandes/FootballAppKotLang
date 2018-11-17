@@ -6,6 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="Favo" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
@@ -16,32 +17,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08577a6f-1660-45cb-b607-1f2e5c025f0a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/generics/BaseMvpPresenter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/generics/BasePresenter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/generics/BaseView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailContract.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailPresenter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/favorite/FavoritesMatchContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/favorite/FavoritesMatchContract.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/favorite/FavoritesMatchFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/favorite/FavoritesMatchFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/favorite/FavoritesMatchPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/favorite/FavoritesMatchPresenter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/HomeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/HomeActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/HomeContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/HomeContract.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/HomePresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/HomePresenter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/list/FootBallMatchScheduleFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/list/FootBallMatchScheduleFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/list/FootBallMatchesScheduleContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/list/FootBallMatchesScheduleContract.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/list/FootBallMatchesSchedulePresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/home/list/FootBallMatchesSchedulePresenter.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -73,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FavoritesMatchFragment.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FavoritesMatchFragment.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/favorite/FavoritesMatchFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="33" column="71" lean-forward="true" selection-start-line="32" selection-start-column="24" selection-end-line="33" selection-end-column="71" />
+            <state relative-caret-position="-9">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -85,8 +71,8 @@
       <file leaf-file-name="MatchScheduleDetailContract.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailContract.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+            <state relative-caret-position="168">
+              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
               <folding>
                 <element signature="e#62#284#0" expanded="true" />
               </folding>
@@ -97,8 +83,8 @@
       <file leaf-file-name="MatchScheduleDetailPresenter.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailPresenter.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="121" column="52" selection-start-line="121" selection-start-column="52" selection-end-line="121" selection-end-column="52" />
+            <state relative-caret-position="160">
+              <caret line="104" column="20" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="20" />
               <folding>
                 <element signature="e#62#586#0" expanded="true" />
               </folding>
@@ -106,20 +92,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MatchScheduleDetailActivity.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MatchScheduleDetailActivity.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="115" column="9" selection-start-line="115" selection-start-column="9" selection-end-line="115" selection-end-column="9" />
+            <state relative-caret-position="175">
+              <caret line="142" column="41" lean-forward="true" selection-start-line="142" selection-start-column="41" selection-end-line="142" selection-end-column="41" />
               <folding>
-                <element signature="e#3480#3524#1" expanded="true" />
-                <element signature="e#3661#3706#1" expanded="true" />
-                <element signature="e#3799#3846#1" expanded="true" />
-                <element signature="e#4809#4855#1" expanded="true" />
-                <element signature="e#5076#5120#1" expanded="true" />
-                <element signature="e#5138#5167#1" expanded="true" />
-                <element signature="e#5295#5339#1" expanded="true" />
-                <element signature="e#5357#5385#1" expanded="true" />
+                <element signature="e#3486#3530#1" expanded="true" />
+                <element signature="e#3667#3712#1" expanded="true" />
+                <element signature="e#3805#3852#1" expanded="true" />
+                <element signature="e#4678#4724#1" expanded="true" />
+                <element signature="e#4945#4989#1" expanded="true" />
+                <element signature="e#5007#5036#1" expanded="true" />
+                <element signature="e#5164#5208#1" expanded="true" />
+                <element signature="e#5226#5254#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail_activity_options_menu.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/detail_activity_options_menu.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuInflater.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-28/android.jar!/android/view/MenuInflater.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+              <folding>
+                <element signature="e#333#334#0" expanded="true" />
+                <element signature="e#384#385#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,31 +166,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FavoritesMatchContract.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/favorite/FavoritesMatchContract.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="69" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
-              <folding>
-                <element signature="e#64#225#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Fragment.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/8cd8c71ff6fbac08ce49c24df50b1634/jars/classes.jar!/android/support/v4/app/Fragment.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="734" column="16" selection-start-line="734" selection-start-column="16" selection-end-line="734" selection-end-column="16" />
-              <folding>
-                <element signature="e#23855#23856#0" expanded="true" />
-                <element signature="e#23890#23891#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -194,7 +180,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sho</find>
       <find>orientation</find>
       <find>click</find>
       <find>on</find>
@@ -213,9 +198,18 @@
       <find>pb_loading_detail_activity_action</find>
       <find>pb_loading_match_schedule</find>
       <find>onGetMatchesScheduleFailedonGetMatchesScheduleFailed</find>
-      <find>favorite</find>
       <find>if</find>
       <find>onsav</find>
+      <find>onsetup</find>
+      <find>menuitem</find>
+      <find>onsetupview</find>
+      <find>resume</find>
+      <find>System.out.println(&quot;Fav</find>
+      <find>setupview</find>
+      <find>favorite</find>
+      <find>Favorite db</find>
+      <find>System.out.println(&quot;Favo</find>
+      <find>System.out.println(&quot;fav</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2634,9 +2628,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/favorite/FavoritesMatchContract.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/favorite/FavoritesMatchPresenter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailContract.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/favorite/FavoritesMatchFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailPresenter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/favorite/FavoritesMatchFragment.kt" />
       </list>
     </option>
   </component>
@@ -3041,13 +3035,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailActivity.kt</url>
-          <line>225</line>
+          <line>226</line>
           <properties />
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailActivity.kt</url>
-          <line>228</line>
+          <line>229</line>
           <properties />
           <option name="timeStamp" value="76" />
         </line-breakpoint>
@@ -3065,15 +3059,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailActivity.kt</url>
-          <line>140</line>
+          <line>141</line>
           <properties />
           <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailActivity.kt</url>
-          <line>109</line>
-          <properties />
-          <option name="timeStamp" value="83" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -3083,7 +3071,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/data/db/FavoriteMatchRowParser.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_add_to_favorites.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3147,19 +3134,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/extensions/StringExtensions.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/detail_activity_options_menu.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="44" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="44" />
-          <folding>
-            <element signature="e#302#343#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/data/model/EventFieldKey.kt">
@@ -3451,47 +3425,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/favorite/FavoritesMatchFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailContract.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+        <state relative-caret-position="168">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
           <folding>
             <element signature="e#62#284#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailActivity.kt">
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-28/android.jar!/android/view/MenuInflater.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="115" column="9" selection-start-line="115" selection-start-column="9" selection-end-line="115" selection-end-column="9" />
+        <state relative-caret-position="135">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
           <folding>
-            <element signature="e#3480#3524#1" expanded="true" />
-            <element signature="e#3661#3706#1" expanded="true" />
-            <element signature="e#3799#3846#1" expanded="true" />
-            <element signature="e#4809#4855#1" expanded="true" />
-            <element signature="e#5076#5120#1" expanded="true" />
-            <element signature="e#5138#5167#1" expanded="true" />
-            <element signature="e#5295#5339#1" expanded="true" />
-            <element signature="e#5357#5385#1" expanded="true" />
+            <element signature="e#333#334#0" expanded="true" />
+            <element signature="e#384#385#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/detail_activity_options_menu.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailPresenter.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="121" column="52" selection-start-line="121" selection-start-column="52" selection-end-line="121" selection-end-column="52" />
+        <state relative-caret-position="160">
+          <caret line="104" column="20" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="20" />
           <folding>
             <element signature="e#62#586#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/favorite/FavoritesMatchFragment.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/muslimlife/tf/footballappkotlang/features/detail/MatchScheduleDetailActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="33" column="71" lean-forward="true" selection-start-line="32" selection-start-column="24" selection-end-line="33" selection-end-column="71" />
+        <state relative-caret-position="175">
+          <caret line="142" column="41" lean-forward="true" selection-start-line="142" selection-start-column="41" selection-end-line="142" selection-end-column="41" />
+          <folding>
+            <element signature="e#3486#3530#1" expanded="true" />
+            <element signature="e#3667#3712#1" expanded="true" />
+            <element signature="e#3805#3852#1" expanded="true" />
+            <element signature="e#4678#4724#1" expanded="true" />
+            <element signature="e#4945#4989#1" expanded="true" />
+            <element signature="e#5007#5036#1" expanded="true" />
+            <element signature="e#5164#5208#1" expanded="true" />
+            <element signature="e#5226#5254#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

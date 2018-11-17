@@ -95,7 +95,6 @@ class MatchScheduleDetailPresenter: MatchScheduleDetailContract.Presenter, BaseP
 
     override fun isFavoriteMatch(matchId: String, context: Context?) {
         if(context == null) {
-            view?.onSaveFavoriteMatchFailed()
             return
         }
         compositeDisposable.add(
@@ -109,7 +108,7 @@ class MatchScheduleDetailPresenter: MatchScheduleDetailContract.Presenter, BaseP
 
     override fun unFavoriteMatch(matchId: String, context: Context?) {
         if(context == null) {
-            view?.onSaveFavoriteMatchFailed()
+            view?.onUnFavoriteMatchFailed()
             return
         }
         view?.onUnFavoriteMatchLoading()

@@ -20,7 +20,7 @@ import org.jetbrains.anko.design.snackbar
 class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailContract.View {
 
     private val matchScheduleDetailPresenter: MatchScheduleDetailPresenter = MatchScheduleDetailPresenter()
-    private var menuItem: Menu? = null
+    private var menuItem: MenuItem? = null
     private var isFavoriteMatch: Boolean = false
     private var event: Event? = null
     private var favoriteEvent: FavoriteMatch? = null
@@ -36,7 +36,6 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
         event = intent.getParcelableExtra(arg_match_bundle_key)
         favoriteEvent = intent.getParcelableExtra(arg_favorite_match_bundle_key)
         matchScheduleDetailPresenter.attach(this)
-        matchScheduleDetailPresenter.setupView(event, favoriteEvent)
     }
 
     override fun onDestroy() {
@@ -46,7 +45,9 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(detail_activity_options_menu, menu)
-        menuItem = menu
+        menuItem = menu?.findItem(R.id.add_to_favorite)
+        //sometimes menuitem is still null, so process presenter after menuitem rendered successfully
+        matchScheduleDetailPresenter.setupView(event, favoriteEvent)
         return true
     }
 
@@ -110,9 +111,9 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
         hideDetailActivityActionLoading()
         isFavoriteMatch = isFavorite
         if (isFavorite) {
-            menuItem?.getItem(0)?.icon = ContextCompat.getDrawable(this, ic_favorited)
+            menuItem?.icon = ContextCompat.getDrawable(this, ic_favorited)
         } else {
-            menuItem?.getItem(0)?.icon = ContextCompat.getDrawable(this, ic_add_to_favorites)
+            menuItem?.icon = ContextCompat.getDrawable(this, ic_add_to_favorites)
         }
     }
 
