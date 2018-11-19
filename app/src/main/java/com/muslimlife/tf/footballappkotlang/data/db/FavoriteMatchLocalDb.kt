@@ -12,20 +12,22 @@ import org.jetbrains.anko.db.select
 
 class FavoriteMatchLocalDb(private val context: Context) {
 
-    fun create(data: FavoriteMatch): Observable<Long>{
-        return Observable.create<Long>{
+    fun create(data: FavoriteMatch): Observable<Long> {
+        return Observable.create<Long> {
             try {
                 context.localDb.use {
-                    val createdId = insert(DbConstant.Companion.FavoriteMatchTable.name,
+                    val createdId = insert(
+                        DbConstant.Companion.FavoriteMatchTable.name,
                         DbConstant.Companion.FavoriteMatchTable.Column.matchId to data.matchId,
                         DbConstant.Companion.FavoriteMatchTable.Column.matchName to data.matchName,
                         DbConstant.Companion.FavoriteMatchTable.Column.matchDate to data.matchDate,
                         DbConstant.Companion.FavoriteMatchTable.Column.homeTeamName to data.homeTeamName,
                         DbConstant.Companion.FavoriteMatchTable.Column.homeTeamScore to data.homeTeamScore,
                         DbConstant.Companion.FavoriteMatchTable.Column.awayTeamName to data.awayTeamName,
-                        DbConstant.Companion.FavoriteMatchTable.Column.awayTeamScore to data.awayTeamScore)
-                        it.onNext(createdId)
-                    }
+                        DbConstant.Companion.FavoriteMatchTable.Column.awayTeamScore to data.awayTeamScore
+                    )
+                    it.onNext(createdId)
+                }
             } catch (e: SQLiteException) {
                 it.onError(e)
             }
@@ -33,13 +35,14 @@ class FavoriteMatchLocalDb(private val context: Context) {
     }
 
     fun delete(matchId: String): Observable<Int> {
-        return Observable.create<Int>{
+        return Observable.create<Int> {
             try {
                 context.localDb.use {
-                    val affectedRows = delete(DbConstant.Companion.FavoriteMatchTable.name,
-                            "${DbConstant.Companion.FavoriteMatchTable.Column.matchId} = {match_id}",
-                            "match_id" to matchId
-                        )
+                    val affectedRows = delete(
+                        DbConstant.Companion.FavoriteMatchTable.name,
+                        "${DbConstant.Companion.FavoriteMatchTable.Column.matchId} = {match_id}",
+                        "match_id" to matchId
+                    )
                     it.onNext(affectedRows)
                 }
             } catch (e: SQLiteException) {
@@ -48,14 +51,16 @@ class FavoriteMatchLocalDb(private val context: Context) {
         }
     }
 
-    fun isFavorite(matchId: String): Observable<Boolean>{
-        return Observable.create<Boolean>{
+    fun isFavorite(matchId: String): Observable<Boolean> {
+        return Observable.create<Boolean> {
             try {
                 context.localDb.use {
                     val result = select(DbConstant.Companion.FavoriteMatchTable.name)
-                        .whereArgs("(${DbConstant.Companion.FavoriteMatchTable.Column.matchId} = {match_id})",
-                            "match_id" to matchId)
-                    it.onNext( result.parseList(classParser<FavoriteMatch>()).isNotEmpty())
+                        .whereArgs(
+                            "(${DbConstant.Companion.FavoriteMatchTable.Column.matchId} = {match_id})",
+                            "match_id" to matchId
+                        )
+                    it.onNext(result.parseList(classParser<FavoriteMatch>()).isNotEmpty())
                 }
             } catch (e: SQLiteException) {
                 it.onError(e)
@@ -63,12 +68,13 @@ class FavoriteMatchLocalDb(private val context: Context) {
         }
     }
 
-    fun readAll(): Observable<List<FavoriteMatch>>{
-        return Observable.create<List<FavoriteMatch>>{
+    fun readAll(): Observable<List<FavoriteMatch>> {
+        return Observable.create<List<FavoriteMatch>> {
             try {
                 context.localDb.use {
-                    val result = select(DbConstant.Companion.FavoriteMatchTable.name).parseList(classParser<FavoriteMatch>())
-                    it.onNext( result.sortedByDescending { it -> it.id } )
+                    val result =
+                        select(DbConstant.Companion.FavoriteMatchTable.name).parseList(classParser<FavoriteMatch>())
+                    it.onNext(result.sortedByDescending { it -> it.id }) //sorted by latest favorite item saved
                 }
             } catch (e: SQLiteException) {
                 it.onError(e)

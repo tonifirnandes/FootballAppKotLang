@@ -6,13 +6,13 @@ import com.muslimlife.tf.footballappkotlang.generics.BaseView
 
 interface HomeContract {
     //linked to activity/fragment lifecycle
-    interface View: BaseView {
+    interface View : BaseView {
         fun showGetAllLeaguesLoading()
         fun onGetAllLeaguesFailed()
         fun onGetAllLeaguesSuccessed(soccerLeagues: List<League>)
     }
 
-    interface Presenter: BaseMvpPresenter<HomeContract.View> {
+    interface Presenter : BaseMvpPresenter<HomeContract.View> {
         fun getAllLeagues()
     }
 }

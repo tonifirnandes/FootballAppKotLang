@@ -6,20 +6,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.muslimlife.tf.footballappkotlang.R
+import com.muslimlife.tf.footballappkotlang.data.model.FavoriteMatch
 import com.muslimlife.tf.footballappkotlang.extensions.Utils
+import com.muslimlife.tf.footballappkotlang.extensions.adjustTimePattern
 import com.muslimlife.tf.footballappkotlang.features.detail.MatchScheduleDetailActivity
 import kotlinx.android.synthetic.main.football_match_schedule_item.view.*
 import org.jetbrains.anko.startActivity
-import com.muslimlife.tf.footballappkotlang.data.model.Event
-import com.muslimlife.tf.footballappkotlang.data.model.FavoriteMatch
-import com.muslimlife.tf.footballappkotlang.extensions.adjustTimePattern
 
-class FavoritesMatchAdapter(private val scheduleList:List<FavoriteMatch>, private val context: Context?):
+class FavoritesMatchAdapter(private val scheduleList: List<FavoriteMatch>, private val context: Context?) :
     RecyclerView.Adapter<FavoritesMatchAdapter.ClubViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClubViewHolder {
-        return ClubViewHolder(LayoutInflater.from(context).inflate(R.layout.football_match_schedule_item,
-            parent, false))
+        return ClubViewHolder(
+            LayoutInflater.from(context).inflate(
+                R.layout.football_match_schedule_item,
+                parent, false
+            )
+        )
     }
 
     override fun getItemCount(): Int = scheduleList.size
@@ -30,9 +33,11 @@ class FavoritesMatchAdapter(private val scheduleList:List<FavoriteMatch>, privat
     }
 
     inner class ClubViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(event: FavoriteMatch){
-            itemView.tv_schedule_date.text = event.matchDate.adjustTimePattern(Utils.originEventDateTimeFormat,
-                Utils.matchEventDateTimeFormat)
+        fun bind(event: FavoriteMatch) {
+            itemView.tv_schedule_date.text = event.matchDate.adjustTimePattern(
+                Utils.originEventDateTimeFormat,
+                Utils.matchEventDateTimeFormat
+            )
             itemView.tv_hometeam_name.text = event.homeTeamName
             itemView.tv_hometeam_score.text = event.homeTeamScore
             itemView.tv_awayteam_name.text = event.awayTeamName
@@ -40,7 +45,8 @@ class FavoritesMatchAdapter(private val scheduleList:List<FavoriteMatch>, privat
 
             itemView.setOnClickListener {
                 itemView.context.startActivity<MatchScheduleDetailActivity>(
-                    MatchScheduleDetailActivity.arg_favorite_match_bundle_key to event)
+                    MatchScheduleDetailActivity.arg_favorite_match_bundle_key to event
+                )
             }
         }
     }

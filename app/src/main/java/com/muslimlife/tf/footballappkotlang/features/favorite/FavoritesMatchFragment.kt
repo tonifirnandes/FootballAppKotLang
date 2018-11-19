@@ -17,7 +17,7 @@ class FavoritesMatchFragment : Fragment(), FavoritesMatchContract.View {
     private val matchesSchedulePresenter: FavoritesMatchPresenter = FavoritesMatchPresenter()
 
     companion object {
-        fun newInstance() : FavoritesMatchFragment = FavoritesMatchFragment()
+        fun newInstance(): FavoritesMatchFragment = FavoritesMatchFragment()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -55,7 +55,7 @@ class FavoritesMatchFragment : Fragment(), FavoritesMatchContract.View {
         hideGetMatchesScheduleLoading()
     }
 
-    private fun hideGetMatchesScheduleLoading(){
+    private fun hideGetMatchesScheduleLoading() {
         pb_loading_match_schedule.hide()
     }
 

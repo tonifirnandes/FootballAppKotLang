@@ -10,17 +10,17 @@ import retrofit2.http.Query
 interface FootBallRest {
 
     @GET(FootBallRestConstant.lastFifteenMatchesEndPoint)
-    fun getLastmatch(@Query(FootBallRestConstant.queryParamsId) id:String) : Flowable<Events>
+    fun getLastmatch(@Query(FootBallRestConstant.queryParamsId) id: String): Flowable<Events>
 
     @GET(FootBallRestConstant.nextFifteenMatchesEndPoint)
-    fun getUpcomingMatch(@Query(FootBallRestConstant.queryParamsId) id:String) : Flowable<Events>
+    fun getUpcomingMatch(@Query(FootBallRestConstant.queryParamsId) id: String): Flowable<Events>
 
     @GET(FootBallRestConstant.eventDetailsEndPoint)
     fun getMatchDetail(@Query(FootBallRestConstant.queryParamsId) matchId: String): Flowable<Events>
 
     @GET(FootBallRestConstant.teamDetailsEndPoint)
-    fun getTeam(@Query(FootBallRestConstant.queryParamsId) id:String) : Flowable<Teams>
+    fun getTeam(@Query(FootBallRestConstant.queryParamsId) id: String): Flowable<Teams>
 
     @GET(FootBallRestConstant.allLeaguesEndPoint)
-    fun getAllLeagues() : Flowable<Leagues>
+    fun getAllLeagues(): Flowable<Leagues>
 }

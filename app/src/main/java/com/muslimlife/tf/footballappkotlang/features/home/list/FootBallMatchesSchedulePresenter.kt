@@ -7,7 +7,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
 class FootBallMatchesSchedulePresenter
-    : FootBallMatchesScheduleContract.Presenter, BasePresenter<FootBallMatchesScheduleContract.View>()  {
+    : FootBallMatchesScheduleContract.Presenter, BasePresenter<FootBallMatchesScheduleContract.View>() {
 
     private var compositeDisposable = CompositeDisposable()
     private var service = FootBallRestService.instance()
@@ -16,7 +16,7 @@ class FootBallMatchesSchedulePresenter
         scheduleType: Int?,
         leagueId: String
     ) {
-        when(scheduleType) {
+        when (scheduleType) {
             0 -> getLastFifteenSoccerMatchByLeagueId(leagueId)
             1 -> getNextFifteenSoccerMatchByLeagueId(leagueId)
             else -> throw UnsupportedOperationException()
@@ -25,25 +25,29 @@ class FootBallMatchesSchedulePresenter
 
     private fun getLastFifteenSoccerMatchByLeagueId(id: String) {
         view?.showGetMatchesScheduleLoading()
-        compositeDisposable.add(service.getLastmatch(id)
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeOn(Schedulers.io())
-            .subscribe({
-                view?.onGetMatchesScheduleSuccessed(it.events)
-            }, {
-                view?.onGetMatchesScheduleFailed()
-            }))
+        compositeDisposable.add(
+            service.getLastmatch(id)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe({
+                    view?.onGetMatchesScheduleSuccessed(it.events)
+                }, {
+                    view?.onGetMatchesScheduleFailed()
+                })
+        )
     }
 
     private fun getNextFifteenSoccerMatchByLeagueId(id: String) {
         view?.showGetMatchesScheduleLoading()
-        compositeDisposable.add(service.getUpcomingMatch(id)
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeOn(Schedulers.io())
-            .subscribe({
-                view?.onGetMatchesScheduleSuccessed(it.events)
-            }, {
-                view?.onGetMatchesScheduleFailed()
-            }))
+        compositeDisposable.add(
+            service.getUpcomingMatch(id)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe({
+                    view?.onGetMatchesScheduleSuccessed(it.events)
+                }, {
+                    view?.onGetMatchesScheduleFailed()
+                })
+        )
     }
 }

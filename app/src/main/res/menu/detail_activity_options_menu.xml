@@ -6,5 +6,5 @@
             android:icon="@drawable/ic_add_to_favorites"
             android:title="@string/str_detail_favorite_option_menu"
             android:iconifiedByDefault="false"
-            app:showAsAction="ifRoom" />
+            app:showAsAction="ifRoom"/>
 </menu>

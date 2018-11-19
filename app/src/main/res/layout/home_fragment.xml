@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-        android:id="@+id/home_view_root"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/home_view_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/transparent">
@@ -36,6 +36,6 @@
             android:padding="@dimen/medium_space_size"
             android:textColor="@color/white"
             app:backgroundTint="@color/colorPrimary"
-            android:text = "@string/str_get_allleagues_loading"/>
+            android:text="@string/str_get_allleagues_loading"/>
 
 </RelativeLayout>

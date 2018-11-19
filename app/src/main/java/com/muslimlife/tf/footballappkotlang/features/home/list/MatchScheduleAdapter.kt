@@ -6,19 +6,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.muslimlife.tf.footballappkotlang.R
+import com.muslimlife.tf.footballappkotlang.data.model.Event
 import com.muslimlife.tf.footballappkotlang.extensions.Utils
+import com.muslimlife.tf.footballappkotlang.extensions.adjustTimePattern
 import com.muslimlife.tf.footballappkotlang.features.detail.MatchScheduleDetailActivity
 import kotlinx.android.synthetic.main.football_match_schedule_item.view.*
 import org.jetbrains.anko.startActivity
-import com.muslimlife.tf.footballappkotlang.data.model.Event
-import com.muslimlife.tf.footballappkotlang.extensions.adjustTimePattern
 
-class MatchScheduleAdapter(private val scheduleList:List<Event>, private val context: Context?):
+class MatchScheduleAdapter(private val scheduleList: List<Event>, private val context: Context?) :
     RecyclerView.Adapter<MatchScheduleAdapter.ClubViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClubViewHolder {
-        return ClubViewHolder(LayoutInflater.from(context).inflate(R.layout.football_match_schedule_item,
-            parent, false))
+        return ClubViewHolder(
+            LayoutInflater.from(context).inflate(
+                R.layout.football_match_schedule_item,
+                parent, false
+            )
+        )
     }
 
     override fun getItemCount(): Int = scheduleList.size
@@ -29,9 +33,11 @@ class MatchScheduleAdapter(private val scheduleList:List<Event>, private val con
     }
 
     inner class ClubViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(event: Event){
-            itemView.tv_schedule_date.text = event.date.adjustTimePattern(Utils.originEventDateTimeFormat,
-                Utils.matchEventDateTimeFormat)
+        fun bind(event: Event) {
+            itemView.tv_schedule_date.text = event.date.adjustTimePattern(
+                Utils.originEventDateTimeFormat,
+                Utils.matchEventDateTimeFormat
+            )
             itemView.tv_hometeam_name.text = event.homeTeamName
             itemView.tv_hometeam_score.text = event.homeScoreNumber
             itemView.tv_awayteam_name.text = event.awayTeamName
@@ -39,7 +45,8 @@ class MatchScheduleAdapter(private val scheduleList:List<Event>, private val con
 
             itemView.setOnClickListener {
                 itemView.context.startActivity<MatchScheduleDetailActivity>(
-                    MatchScheduleDetailActivity.arg_match_bundle_key to event)
+                    MatchScheduleDetailActivity.arg_match_bundle_key to event
+                )
             }
         }
     }

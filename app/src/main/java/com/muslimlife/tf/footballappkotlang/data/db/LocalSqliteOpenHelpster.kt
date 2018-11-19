@@ -4,8 +4,10 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import org.jetbrains.anko.db.*
 
-class LocalSqliteOpenHelpster(context: Context) : ManagedSQLiteOpenHelper(context, DbConstant.name, null,
-    DbConstant.version) {
+class LocalSqliteOpenHelpster(context: Context) : ManagedSQLiteOpenHelper(
+    context, DbConstant.name, null,
+    DbConstant.version
+) {
 
     companion object {
 
@@ -16,12 +18,13 @@ class LocalSqliteOpenHelpster(context: Context) : ManagedSQLiteOpenHelper(contex
             if (instance == null) {
                 instance = LocalSqliteOpenHelpster(context.applicationContext)
             }
-            return instance!!
+            return instance as LocalSqliteOpenHelpster
         }
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
-        db?.createTable(DbConstant.Companion.FavoriteMatchTable.name, true,
+        db?.createTable(
+            DbConstant.Companion.FavoriteMatchTable.name, true,
             DbConstant.Companion.FavoriteMatchTable.Column.id to INTEGER + PRIMARY_KEY + AUTOINCREMENT,
             DbConstant.Companion.FavoriteMatchTable.Column.matchId to TEXT + UNIQUE,
             DbConstant.Companion.FavoriteMatchTable.Column.matchName to TEXT,
@@ -29,7 +32,8 @@ class LocalSqliteOpenHelpster(context: Context) : ManagedSQLiteOpenHelper(contex
             DbConstant.Companion.FavoriteMatchTable.Column.homeTeamName to TEXT,
             DbConstant.Companion.FavoriteMatchTable.Column.homeTeamScore to TEXT,
             DbConstant.Companion.FavoriteMatchTable.Column.awayTeamName to TEXT,
-            DbConstant.Companion.FavoriteMatchTable.Column.awayTeamScore to TEXT)
+            DbConstant.Companion.FavoriteMatchTable.Column.awayTeamScore to TEXT
+        )
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {

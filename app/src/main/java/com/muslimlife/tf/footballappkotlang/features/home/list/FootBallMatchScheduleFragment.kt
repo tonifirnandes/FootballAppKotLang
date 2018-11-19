@@ -21,7 +21,7 @@ class FootBallMatchScheduleFragment : Fragment(), FootBallMatchesScheduleContrac
         const val next_schedule = 1
         private const val arg_schedule_type = "schedule_type"
         private const val arg_league_id = "league_id"
-        fun newInstance(scheduleType: Int, leagueId: String) : FootBallMatchScheduleFragment {
+        fun newInstance(scheduleType: Int, leagueId: String): FootBallMatchScheduleFragment {
             val args = Bundle()
             args.putInt(arg_schedule_type, scheduleType)
             args.putString(arg_league_id, leagueId)
@@ -38,8 +38,10 @@ class FootBallMatchScheduleFragment : Fragment(), FootBallMatchesScheduleContrac
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         matchesSchedulePresenter.attach(this)
-        matchesSchedulePresenter.getMatchesScheduleByType(arguments?.getInt(arg_schedule_type),
-            arguments?.get(arg_league_id).toString())
+        matchesSchedulePresenter.getMatchesScheduleByType(
+            arguments?.getInt(arg_schedule_type),
+            arguments?.get(arg_league_id).toString()
+        )
     }
 
     override fun onDestroy() {
@@ -63,7 +65,7 @@ class FootBallMatchScheduleFragment : Fragment(), FootBallMatchesScheduleContrac
         hideGetMatchesScheduleLoading()
     }
 
-    private fun hideGetMatchesScheduleLoading(){
+    private fun hideGetMatchesScheduleLoading() {
         pb_loading_match_schedule.hide()
     }
 

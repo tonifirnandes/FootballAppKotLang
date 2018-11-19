@@ -20,7 +20,7 @@ class HomeFragment : Fragment(), HomeContract.View {
     private val homePresenter: HomePresenter = HomePresenter()
 
     companion object {
-        fun newInstance() : HomeFragment = HomeFragment()
+        fun newInstance(): HomeFragment = HomeFragment()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -45,22 +45,33 @@ class HomeFragment : Fragment(), HomeContract.View {
 
     override fun onGetAllLeaguesFailed() {
         pb_home.hide()
-        snackbar(home_view_root, getString(R.string.str_generic_error_failed),
-            getString(R.string.str_retry)) {homePresenter.getAllLeagues()}
+        snackbar(
+            home_view_root, getString(R.string.str_generic_error_failed),
+            getString(R.string.str_retry)
+        ) { homePresenter.getAllLeagues() }
     }
 
     override fun onGetAllLeaguesSuccessed(soccerLeagues: List<League>) {
         pb_home.hide()
         selectedLeagueId = soccerLeagues[0].id
         selectedLeagueName = soccerLeagues[0].name
-        viewpager_main.adapter = FootBallMatchScheduleAdapter(fragmentManager!!, selectedLeagueId,
-            resources.getStringArray(R.array.schedule_types))
+        if(fragmentManager == null) {
+            snackbar(
+                home_view_root, getString(R.string.str_generic_error_failed),
+                getString(R.string.str_retry)
+            ) { onGetAllLeaguesSuccessed(soccerLeagues) }
+            return
+        }
+        viewpager_main.adapter = FootBallMatchScheduleAdapter(
+            fragmentManager, selectedLeagueId,
+            resources.getStringArray(R.array.schedule_types)
+        )
         tabs_main.setupWithViewPager(viewpager_main)
         viewpager_main.show()
         tabs_main.show()
     }
 
-    private fun firstInitHomeView(){
+    private fun firstInitHomeView() {
         //first loading
         viewpager_main.hide()
         tabs_main.hide()

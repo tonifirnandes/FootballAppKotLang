@@ -8,10 +8,10 @@ import android.view.MenuItem
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.muslimlife.tf.footballappkotlang.R
-import com.muslimlife.tf.footballappkotlang.data.model.Event
-import com.muslimlife.tf.footballappkotlang.R.menu.detail_activity_options_menu
 import com.muslimlife.tf.footballappkotlang.R.drawable.ic_add_to_favorites
 import com.muslimlife.tf.footballappkotlang.R.drawable.ic_favorited
+import com.muslimlife.tf.footballappkotlang.R.menu.detail_activity_options_menu
+import com.muslimlife.tf.footballappkotlang.data.model.Event
 import com.muslimlife.tf.footballappkotlang.data.model.FavoriteMatch
 import com.muslimlife.tf.footballappkotlang.extensions.*
 import kotlinx.android.synthetic.main.match_schedule_detail_activity.*
@@ -24,6 +24,7 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
     private var isFavoriteMatch: Boolean = false
     private var event: Event? = null
     private var favoriteEvent: FavoriteMatch? = null
+    private var isCheckingFavorite = true
 
     companion object {
         const val arg_match_bundle_key = "match"
@@ -52,7 +53,7 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        return when(item!!.itemId) {
+        return when (item?.itemId) {
             android.R.id.home -> {
                 super.onBackPressed()
                 true
@@ -108,6 +109,7 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
     }
 
     override fun onSetFavoriteView(isFavorite: Boolean) {
+        isCheckingFavorite = false
         hideDetailActivityActionLoading()
         isFavoriteMatch = isFavorite
         if (isFavorite) {
@@ -129,12 +131,16 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
     override fun onSetupViewFailed(isRetryAble: Boolean) {
         hideDetailActivityActionLoading()
 
-        if(isRetryAble) {
-            snackbar(sv_detail_root_view, getString(R.string.str_generic_error_failed),
-                getString(R.string.str_retry)) {matchScheduleDetailPresenter.setupView(event!!, favoriteEvent!!)}
+        if (isRetryAble) {
+            snackbar(
+                sv_detail_root_view, getString(R.string.str_generic_error_failed),
+                getString(R.string.str_retry)
+            ) { matchScheduleDetailPresenter.setupView(event, favoriteEvent) }
         } else {
-            snackbar(sv_detail_root_view, getString(R.string.str_generic_error_failed),
-                getString(R.string.str_back)) {finish()}
+            snackbar(
+                sv_detail_root_view, getString(R.string.str_generic_error_failed),
+                getString(R.string.str_back)
+            ) { finish() }
         }
     }
 
@@ -157,7 +163,7 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
         hideDetailActivityActionLoading()
     }
 
-    private fun initView(event: Event?){
+    private fun initView(event: Event?) {
         showMatchSummaryView(event)
         showMatchGoalsView(event)
         showMatchShotsView(event)
@@ -168,18 +174,20 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
         showLineupsSubtitutesView(event)
     }
 
-    override fun showDetailActivityActionLoading(){
+    override fun showDetailActivityActionLoading() {
         pb_loading_detail_activity_action.show()
     }
 
-    override fun hideDetailActivityActionLoading(){
+    override fun hideDetailActivityActionLoading() {
         pb_loading_detail_activity_action.hide()
     }
 
     private fun showMatchSummaryView(event: Event?) {
-        if(event?.date != null) {
-            tv_match_date.text = event.date.adjustTimePattern(Utils.originEventDateTimeFormat,
-                Utils.matchEventDateTimeFormat)
+        if (event?.date != null) {
+            tv_match_date.text = event.date.adjustTimePattern(
+                Utils.originEventDateTimeFormat,
+                Utils.matchEventDateTimeFormat
+            )
         }
         tv_home_team_name.text = event?.homeTeamName
         tv_home_team_score.text = event?.homeScoreNumber
@@ -189,7 +197,7 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
 
     private fun showMatchGoalsView(event: Event?) {
         tv_home_team_goals_summary.text = event?.homeGoalDetails?.splitted()
-        tv_away_team_goals_summary.text= event?.awayGoalDetails?.splitted()
+        tv_away_team_goals_summary.text = event?.awayGoalDetails?.splitted()
 
     }
 
@@ -203,34 +211,34 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
         tv_away_team_goalkeepers.text = event?.awayLineupGoalkeeper?.splitted()
     }
 
-    private fun showLineupsDefenseView(event: Event?){
+    private fun showLineupsDefenseView(event: Event?) {
         tv_home_team_defenses.text = event?.homeLineupDefense?.splitted()
         tv_away_team_defenses.text = event?.awayLineupDefense?.splitted()
     }
 
-    private fun showLineupsMidfieldView(event: Event?){
+    private fun showLineupsMidfieldView(event: Event?) {
         tv_home_team_midfields.text = event?.homeLineupMidfield?.splitted()
         tv_away_team_midfields.text = event?.awayLineupMidfield?.splitted()
     }
 
-    private fun showLineupsForwardView(event: Event?){
+    private fun showLineupsForwardView(event: Event?) {
         tv_home_team_forwards.text = event?.homeLineupForward?.splitted()
         tv_away_team_forwards.text = event?.awayLineupForward?.splitted()
     }
 
-    private fun showLineupsSubtitutesView(event: Event?){
+    private fun showLineupsSubtitutesView(event: Event?) {
         tv_home_team_subtitutes.text = event?.homeLineupSubstitutes?.splitted()
         tv_away_team_subtitutes.text = event?.awayLineupSubstitutes?.splitted()
     }
 
-    private fun addToFavorite(){
-        if(event == null) {
+    private fun addToFavorite() {
+        if (event == null || isCheckingFavorite) {
             return
         }
-        if(!isFavoriteMatch) {
-            matchScheduleDetailPresenter.saveFavoriteMatch(event!!, this)
+        if (!isFavoriteMatch) {
+            matchScheduleDetailPresenter.saveFavoriteMatch(event, this)
         } else {
-            matchScheduleDetailPresenter.unFavoriteMatch(event!!.id, this)
+            matchScheduleDetailPresenter.unFavoriteMatch(event?.id, this)
         }
     }
 }

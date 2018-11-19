@@ -12,4 +12,5 @@ data class League(
     @SerializedName(LeagueFieldKey.category)
     val category: String,
     @SerializedName(LeagueFieldKey.alternativeName)
-    val alternativeName: String)
+    val alternativeName: String
+)

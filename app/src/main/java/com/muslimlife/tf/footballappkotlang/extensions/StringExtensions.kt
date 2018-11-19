@@ -16,6 +16,6 @@ fun String.adjustTimePattern(oldPattern: String, newPattern: String): String? {
     }
 }
 
-fun String.splitted(): String{
+fun String.splitted(): String {
     return this.replace("; ", ";").replace(";", "\n")
 }
