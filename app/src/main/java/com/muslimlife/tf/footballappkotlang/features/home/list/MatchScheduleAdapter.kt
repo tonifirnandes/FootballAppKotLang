@@ -1,0 +1,54 @@
+package com.muslimlife.tf.footballappkotlang.features.home.list
+
+import android.content.Context
+import android.support.v7.widget.RecyclerView
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import com.muslimlife.tf.footballappkotlang.R
+import com.muslimlife.tf.footballappkotlang.data.model.Event
+import com.muslimlife.tf.footballappkotlang.extensions.GenericDateFormatConstant
+import com.muslimlife.tf.footballappkotlang.extensions.adjustTimePattern
+import com.muslimlife.tf.footballappkotlang.features.detail.MatchScheduleDetailActivity
+import kotlinx.android.synthetic.main.football_match_schedule_item.view.*
+import org.jetbrains.anko.startActivity
+
+class MatchScheduleAdapter(private val scheduleList: List<Event>, private val context: Context?) :
+    RecyclerView.Adapter<MatchScheduleAdapter.ClubViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClubViewHolder {
+        return ClubViewHolder(
+            LayoutInflater.from(context).inflate(
+                R.layout.football_match_schedule_item,
+                parent, false
+            )
+        )
+    }
+
+    override fun getItemCount(): Int = scheduleList.size
+
+
+    override fun onBindViewHolder(holder: ClubViewHolder, position: Int) {
+        holder.bind(scheduleList[position])
+    }
+
+    inner class ClubViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bind(event: Event) {
+            itemView.tv_schedule_date.text = event.date.adjustTimePattern(
+                GenericDateFormatConstant.originEventDateTimeFormat,
+                GenericDateFormatConstant.matchEventDateTimeFormat
+            )
+            itemView.tv_hometeam_name.text = event.homeTeamName
+            itemView.tv_hometeam_score.text = event.homeScoreNumber
+            itemView.tv_awayteam_name.text = event.awayTeamName
+            itemView.tv_awayteam_score.text = event.awayScoreNumber
+
+            itemView.setOnClickListener {
+                itemView.context.startActivity<MatchScheduleDetailActivity>(
+                    MatchScheduleDetailActivity.arg_match_bundle_key to event
+                )
+            }
+        }
+    }
+
+}
