@@ -27,8 +27,8 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
     private var isCheckingFavorite = true
 
     companion object {
-        const val arg_match_bundle_key = "match"
-        const val arg_favorite_match_bundle_key = "favorite_match"
+        const val arg_match_bundle_key: String = "match"
+        const val arg_favorite_match_bundle_key: String = "favorite_match"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,7 +67,7 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
 
     }
 
-    override fun onGetHomeTeamBadgeSuccessed(url: String) {
+    override fun onGetHomeTeamBadgeSuccess(url: String) {
         pb_home_team_logo.hide()
         Glide.with(iv_home_team_logo)
             .load(url)
@@ -79,7 +79,7 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
         pb_home_team_logo.hide()
     }
 
-    override fun onGetAwayTeamBadgeSuccessed(url: String) {
+    override fun onGetAwayTeamBadgeSuccess(url: String) {
         pb_away_team_logo.hide()
         Glide.with(iv_away_team_logo)
             .load(url)
@@ -144,7 +144,7 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
         }
     }
 
-    override fun onSetupViewSuccessed(eventLoaded: Event) {
+    override fun onSetupViewSuccess(eventLoaded: Event) {
         event = eventLoaded
         hideDetailActivityActionLoading()
         initView(event)
@@ -171,7 +171,7 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
         showLineupsDefenseView(event)
         showLineupsMidfieldView(event)
         showLineupsForwardView(event)
-        showLineupsSubtitutesView(event)
+        showLineupssubstitutesView(event)
     }
 
     override fun showDetailActivityActionLoading() {
@@ -185,8 +185,8 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
     private fun showMatchSummaryView(event: Event?) {
         if (event?.date != null) {
             tv_match_date.text = event.date.adjustTimePattern(
-                Utils.originEventDateTimeFormat,
-                Utils.matchEventDateTimeFormat
+                GenericDateFormatConstant.originEventDateTimeFormat,
+                GenericDateFormatConstant.matchEventDateTimeFormat
             )
         }
         tv_home_team_name.text = event?.homeTeamName
@@ -196,8 +196,8 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
     }
 
     private fun showMatchGoalsView(event: Event?) {
-        tv_home_team_goals_summary.text = event?.homeGoalDetails?.splitted()
-        tv_away_team_goals_summary.text = event?.awayGoalDetails?.splitted()
+        tv_home_team_goals_summary.text = event?.homeGoalDetails?.split()
+        tv_away_team_goals_summary.text = event?.awayGoalDetails?.split()
 
     }
 
@@ -207,28 +207,28 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
     }
 
     private fun showLineupsGoalKeeperView(event: Event?) {
-        tv_home_team_goalkeepers.text = event?.homeLineupGoalkeeper?.splitted()
-        tv_away_team_goalkeepers.text = event?.awayLineupGoalkeeper?.splitted()
+        tv_home_team_goalkeepers.text = event?.homeLineupGoalkeeper?.split()
+        tv_away_team_goalkeepers.text = event?.awayLineupGoalkeeper?.split()
     }
 
     private fun showLineupsDefenseView(event: Event?) {
-        tv_home_team_defenses.text = event?.homeLineupDefense?.splitted()
-        tv_away_team_defenses.text = event?.awayLineupDefense?.splitted()
+        tv_home_team_defenses.text = event?.homeLineupDefense?.split()
+        tv_away_team_defenses.text = event?.awayLineupDefense?.split()
     }
 
     private fun showLineupsMidfieldView(event: Event?) {
-        tv_home_team_midfields.text = event?.homeLineupMidfield?.splitted()
-        tv_away_team_midfields.text = event?.awayLineupMidfield?.splitted()
+        tv_home_team_midfields.text = event?.homeLineupMidfield?.split()
+        tv_away_team_midfields.text = event?.awayLineupMidfield?.split()
     }
 
     private fun showLineupsForwardView(event: Event?) {
-        tv_home_team_forwards.text = event?.homeLineupForward?.splitted()
-        tv_away_team_forwards.text = event?.awayLineupForward?.splitted()
+        tv_home_team_forwards.text = event?.homeLineupForward?.split()
+        tv_away_team_forwards.text = event?.awayLineupForward?.split()
     }
 
-    private fun showLineupsSubtitutesView(event: Event?) {
-        tv_home_team_subtitutes.text = event?.homeLineupSubstitutes?.splitted()
-        tv_away_team_subtitutes.text = event?.awayLineupSubstitutes?.splitted()
+    private fun showLineupssubstitutesView(event: Event?) {
+        tv_home_team_substitutes.text = event?.homeLineupSubstitutes?.split()
+        tv_away_team_substitutes.text = event?.awayLineupSubstitutes?.split()
     }
 
     private fun addToFavorite() {

@@ -2,9 +2,9 @@ package com.muslimlife.tf.footballappkotlang.data.model
 
 class LeagueFieldKey {
     companion object {
-        const val id = "idLeague"
-        const val name = "strLeague"
-        const val category = "strSport"
-        const val alternativeName = "strLeagueAlternate"
+        const val id: String = "idLeague"
+        const val name: String = "strLeague"
+        const val category: String = "strSport"
+        const val alternativeName: String = "strLeagueAlternate"
     }
 }

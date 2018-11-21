@@ -8,9 +8,9 @@ import com.muslimlife.tf.footballappkotlang.generics.BaseView
 
 interface MatchScheduleDetailContract {
     interface View : BaseView {
-        fun onGetHomeTeamBadgeSuccessed(url: String)
+        fun onGetHomeTeamBadgeSuccess(url: String)
         fun onGetAwayTeamBadgeFailed()
-        fun onGetAwayTeamBadgeSuccessed(url: String)
+        fun onGetAwayTeamBadgeSuccess(url: String)
         fun onGetHomeTeamBadgeFailed()
         fun onSaveFavoriteMatchLoading()
         fun onSaveFavoriteMatchSuccess()
@@ -20,7 +20,7 @@ interface MatchScheduleDetailContract {
         fun onUnFavoriteMatchSuccess()
         fun onUnFavoriteMatchFailed()
         fun onSetupViewFailed(isRetryAble: Boolean)
-        fun onSetupViewSuccessed(eventLoaded: Event)
+        fun onSetupViewSuccess(eventLoaded: Event)
         fun onGetEventDetailsByIdLoading()
         fun onGetEventDetailsByIdFailed()
         fun showDetailActivityActionLoading()

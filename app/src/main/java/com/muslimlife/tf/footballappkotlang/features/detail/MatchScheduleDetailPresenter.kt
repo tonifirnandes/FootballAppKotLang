@@ -20,7 +20,7 @@ class MatchScheduleDetailPresenter : MatchScheduleDetailContract.Presenter,
 
     override fun setupView(event: Event?, favoriteEvent: FavoriteMatch?) {
         if (event != null) {
-            view?.onSetupViewSuccessed(event)
+            view?.onSetupViewSuccess(event)
             return
         }
 
@@ -39,7 +39,7 @@ class MatchScheduleDetailPresenter : MatchScheduleDetailContract.Presenter,
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe({
-                    view?.onSetupViewSuccessed(it.events[0])
+                    view?.onSetupViewSuccess(it.events[0])
                 }, {
                     view?.onSetupViewFailed(true)
                 })
@@ -52,7 +52,7 @@ class MatchScheduleDetailPresenter : MatchScheduleDetailContract.Presenter,
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe({
-                    view?.onGetHomeTeamBadgeSuccessed(it.teams[0].badgeUrl)
+                    view?.onGetHomeTeamBadgeSuccess(it.teams[0].badgeUrl)
                 }, {
                     view?.onGetHomeTeamBadgeFailed()
                 })
@@ -65,7 +65,7 @@ class MatchScheduleDetailPresenter : MatchScheduleDetailContract.Presenter,
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe({
-                    view?.onGetAwayTeamBadgeSuccessed(it.teams[0].badgeUrl)
+                    view?.onGetAwayTeamBadgeSuccess(it.teams[0].badgeUrl)
                 }, {
                     view?.onGetAwayTeamBadgeFailed()
                 })

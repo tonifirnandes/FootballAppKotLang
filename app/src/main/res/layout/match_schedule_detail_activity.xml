@@ -488,7 +488,7 @@
                     android:layout_height="wrap_content">
 
                 <TextView
-                        android:id="@+id/tv_home_team_subtitutes"
+                        android:id="@+id/tv_home_team_substitutes"
                         style="@style/TextAppearance.AppCompat.Caption"
                         android:layout_toLeftOf="@+id/tv_subititues_summary_title"
                         android:layout_toStartOf="@+id/tv_subititues_summary_title"
@@ -506,10 +506,10 @@
                         android:layout_marginLeft="@dimen/normal_space_size"
                         android:layout_centerHorizontal="true"
                         android:textColor="@color/colorPrimary"
-                        android:text="@string/str_lineups_subtitutes_detail_title"/>
+                        android:text="@string/str_lineups_substitutes_detail_title"/>
 
                 <TextView
-                        android:id="@+id/tv_away_team_subtitutes"
+                        android:id="@+id/tv_away_team_substitutes"
                         style="@style/TextAppearance.AppCompat.Caption"
                         android:layout_toRightOf="@+id/tv_subititues_summary_title"
                         android:layout_toEndOf="@+id/tv_subititues_summary_title"

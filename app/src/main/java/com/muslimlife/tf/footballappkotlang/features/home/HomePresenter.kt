@@ -21,7 +21,7 @@ class HomePresenter : HomeContract.Presenter, BasePresenter<HomeContract.View>()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe({
-                    view?.onGetAllLeaguesSuccessed(it.leagues.filter { league ->
+                    view?.onGetAllLeaguesSuccess(it.leagues.filter { league ->
                         league.category ==
                                 FootBallRestConstant.apiSoccerCategory
                     })

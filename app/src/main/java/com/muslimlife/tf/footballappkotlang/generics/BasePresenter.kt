@@ -8,7 +8,7 @@ open class BasePresenter<V : BaseView> : BaseMvpPresenter<V> {
     var view: V? = null
 
 
-    override val isAttached = view != null
+    override val isAttached: Boolean = view != null
 
 
     override fun attach(view: V) {

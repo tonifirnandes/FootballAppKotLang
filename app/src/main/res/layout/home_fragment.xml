@@ -36,6 +36,6 @@
             android:padding="@dimen/medium_space_size"
             android:textColor="@color/white"
             app:backgroundTint="@color/colorPrimary"
-            android:text="@string/str_get_allleagues_loading"/>
+            android:text="@string/str_get_all_leagues_loading"/>
 
 </RelativeLayout>

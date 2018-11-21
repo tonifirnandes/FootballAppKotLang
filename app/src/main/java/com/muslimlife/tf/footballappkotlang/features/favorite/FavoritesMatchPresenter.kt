@@ -23,7 +23,7 @@ class FavoritesMatchPresenter
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe({
-                    view?.onGetFavoritesMatchSuccessed(it)
+                    view?.onGetFavoritesMatchSuccess(it)
                 }, {
                     view?.onGetFavoritesMatchFailed()
                 })

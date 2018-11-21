@@ -17,8 +17,8 @@ class FootBallMatchScheduleFragment : Fragment(), FootBallMatchesScheduleContrac
     private val matchesSchedulePresenter: FootBallMatchesSchedulePresenter = FootBallMatchesSchedulePresenter()
 
     companion object {
-        const val previous_schedule = 0
-        const val next_schedule = 1
+        const val previous_schedule: Int = 0
+        const val next_schedule: Int = 1
         private const val arg_schedule_type = "schedule_type"
         private const val arg_league_id = "league_id"
         fun newInstance(scheduleType: Int, leagueId: String): FootBallMatchScheduleFragment {
@@ -53,7 +53,7 @@ class FootBallMatchScheduleFragment : Fragment(), FootBallMatchesScheduleContrac
         pb_loading_match_schedule.show()
     }
 
-    override fun onGetMatchesScheduleSuccessed(matchScheduleList: List<Event>) {
+    override fun onGetMatchesScheduleSuccess(matchScheduleList: List<Event>) {
         hideGetMatchesScheduleLoading()
         val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         rv_match_schedule.layoutManager = layoutManager

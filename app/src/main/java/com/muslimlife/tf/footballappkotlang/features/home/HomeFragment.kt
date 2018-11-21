@@ -51,15 +51,15 @@ class HomeFragment : Fragment(), HomeContract.View {
         ) { homePresenter.getAllLeagues() }
     }
 
-    override fun onGetAllLeaguesSuccessed(soccerLeagues: List<League>) {
+    override fun onGetAllLeaguesSuccess(soccerLeagues: List<League>) {
         pb_home.hide()
         selectedLeagueId = soccerLeagues[0].id
         selectedLeagueName = soccerLeagues[0].name
-        if(fragmentManager == null) {
+        if (fragmentManager == null) {
             snackbar(
                 home_view_root, getString(R.string.str_generic_error_failed),
                 getString(R.string.str_retry)
-            ) { onGetAllLeaguesSuccessed(soccerLeagues) }
+            ) { onGetAllLeaguesSuccess(soccerLeagues) }
             return
         }
         viewpager_main.adapter = FootBallMatchScheduleAdapter(

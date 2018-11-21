@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.muslimlife.tf.footballappkotlang.R
 import com.muslimlife.tf.footballappkotlang.data.model.FavoriteMatch
-import com.muslimlife.tf.footballappkotlang.extensions.Utils
+import com.muslimlife.tf.footballappkotlang.extensions.GenericDateFormatConstant
 import com.muslimlife.tf.footballappkotlang.extensions.adjustTimePattern
 import com.muslimlife.tf.footballappkotlang.features.detail.MatchScheduleDetailActivity
 import kotlinx.android.synthetic.main.football_match_schedule_item.view.*
@@ -35,8 +35,8 @@ class FavoritesMatchAdapter(private val scheduleList: List<FavoriteMatch>, priva
     inner class ClubViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(event: FavoriteMatch) {
             itemView.tv_schedule_date.text = event.matchDate.adjustTimePattern(
-                Utils.originEventDateTimeFormat,
-                Utils.matchEventDateTimeFormat
+                GenericDateFormatConstant.originEventDateTimeFormat,
+                GenericDateFormatConstant.matchEventDateTimeFormat
             )
             itemView.tv_hometeam_name.text = event.homeTeamName
             itemView.tv_hometeam_score.text = event.homeTeamScore

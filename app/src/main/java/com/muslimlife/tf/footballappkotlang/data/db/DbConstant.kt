@@ -2,21 +2,21 @@ package com.muslimlife.tf.footballappkotlang.data.db
 
 class DbConstant {
     companion object {
-        const val name = "footballappkotlang.db"
-        const val version = 1
+        const val name: String = "footballappkotlang.db"
+        const val version: Int = 1
 
         object FavoriteMatchTable {
-            const val name = "tbl_favorite_match"
+            const val name: String = "tbl_favorite_match"
 
             object Column {
-                const val id = "id"
-                const val matchId = "matchId"
-                const val matchName = "matchName"
-                const val matchDate = "matchDate"
-                const val homeTeamName = "homeTeamName"
-                const val homeTeamScore = "homeTeamScore"
-                const val awayTeamName = "awayTeamName"
-                const val awayTeamScore = "awayTeamScore"
+                const val id: String = "id"
+                const val matchId: String = "matchId"
+                const val matchName: String = "matchName"
+                const val matchDate: String = "matchDate"
+                const val homeTeamName: String = "homeTeamName"
+                const val homeTeamScore: String = "homeTeamScore"
+                const val awayTeamName: String = "awayTeamName"
+                const val awayTeamScore: String = "awayTeamScore"
             }
         }
     }

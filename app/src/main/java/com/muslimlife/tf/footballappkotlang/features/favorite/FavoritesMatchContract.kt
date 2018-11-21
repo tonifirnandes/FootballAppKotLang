@@ -8,7 +8,7 @@ import com.muslimlife.tf.footballappkotlang.generics.BaseView
 interface FavoritesMatchContract {
     interface View : BaseView {
         fun showGetFavoritesMatchLoading()
-        fun onGetFavoritesMatchSuccessed(favoriteMatchList: List<FavoriteMatch>)
+        fun onGetFavoritesMatchSuccess(favoriteMatchList: List<FavoriteMatch>)
         fun onGetFavoritesMatchFailed()
     }
 

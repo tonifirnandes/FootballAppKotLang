@@ -30,7 +30,7 @@ class FootBallMatchesSchedulePresenter
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe({
-                    view?.onGetMatchesScheduleSuccessed(it.events)
+                    view?.onGetMatchesScheduleSuccess(it.events)
                 }, {
                     view?.onGetMatchesScheduleFailed()
                 })
@@ -44,7 +44,7 @@ class FootBallMatchesSchedulePresenter
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe({
-                    view?.onGetMatchesScheduleSuccessed(it.events)
+                    view?.onGetMatchesScheduleSuccess(it.events)
                 }, {
                     view?.onGetMatchesScheduleFailed()
                 })

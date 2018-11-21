@@ -43,7 +43,7 @@ class FavoritesMatchFragment : Fragment(), FavoritesMatchContract.View {
         pb_loading_match_schedule.show()
     }
 
-    override fun onGetFavoritesMatchSuccessed(favoriteMatchList: List<FavoriteMatch>) {
+    override fun onGetFavoritesMatchSuccess(favoriteMatchList: List<FavoriteMatch>) {
         hideGetMatchesScheduleLoading()
         val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         rv_match_schedule.layoutManager = layoutManager

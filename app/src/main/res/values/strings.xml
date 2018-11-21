@@ -12,8 +12,7 @@
     <string name="str_delete_favorite_failed">Remove from favorite failed</string>
 
     <!--league loading state-->
-    <string name="str_get_allleagues_loading">Loading LEAGUES &#8230;</string>
-    <string name="str_get_allleagues_notfound">Leagues not found</string>
+    <string name="str_get_all_leagues_loading">Loading LEAGUES &#8230;</string>
 
     <string-array name="schedule_types">
         <item>Last Match</item>
@@ -28,7 +27,7 @@
     <string name="str_lineups_defense_detail_title">Defense</string>
     <string name="str_lineups_midfield_detail_title">Midfield</string>
     <string name="str_lineups_forward_detail_title">Forward</string>
-    <string name="str_lineups_subtitutes_detail_title">Subtitutes</string>
+    <string name="str_lineups_substitutes_detail_title">substitutes</string>
     <string name="str_detail_favorite_option_menu">Favorite</string>
 
 

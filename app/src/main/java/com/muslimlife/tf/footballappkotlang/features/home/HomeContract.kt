@@ -9,7 +9,7 @@ interface HomeContract {
     interface View : BaseView {
         fun showGetAllLeaguesLoading()
         fun onGetAllLeaguesFailed()
-        fun onGetAllLeaguesSuccessed(soccerLeagues: List<League>)
+        fun onGetAllLeaguesSuccess(soccerLeagues: List<League>)
     }
 
     interface Presenter : BaseMvpPresenter<HomeContract.View> {

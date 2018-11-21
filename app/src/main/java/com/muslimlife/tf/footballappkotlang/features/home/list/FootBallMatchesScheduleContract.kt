@@ -7,7 +7,7 @@ import com.muslimlife.tf.footballappkotlang.generics.BaseView
 interface FootBallMatchesScheduleContract {
     interface View : BaseView {
         fun showGetMatchesScheduleLoading()
-        fun onGetMatchesScheduleSuccessed(matchScheduleList: List<Event>)
+        fun onGetMatchesScheduleSuccess(matchScheduleList: List<Event>)
         fun onGetMatchesScheduleFailed()
     }
 
