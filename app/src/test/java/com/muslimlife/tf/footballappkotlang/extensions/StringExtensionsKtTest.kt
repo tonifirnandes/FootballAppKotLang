@@ -8,7 +8,7 @@ import java.text.ParseException
 class StringExtensionsKtTest {
 
     @Test
-    fun adjustTimePatternValid() {
+    fun adjustTimePattern_isValid() {
         val originString = "2018-11-11"
         assertEquals(
             "Sun, 11 Nov 2018",
@@ -20,7 +20,7 @@ class StringExtensionsKtTest {
     }
 
     @Test
-    fun adjustTimePatternInValidOriginDateValue() {
+    fun adjustTimePattern_isWrongOriginDateValue() {
         val originString = "11-11-2018"
         assertNotEquals(
             "Sun, 11 Nov 2018",
@@ -32,7 +32,7 @@ class StringExtensionsKtTest {
     }
 
     @Test(expected = ParseException::class)
-    fun adjustTimePatternInValidOriginDateFormat() {
+    fun adjustTimePattern_isInvalidOriginDateFormat() {
         val originString = "11/11/2018"
         assertEquals(
             "Sun, 11 Nov 2018",
