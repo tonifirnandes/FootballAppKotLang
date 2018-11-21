@@ -27,7 +27,7 @@ class FootBallRestKtTest {
     @Test(expected = ArgumentsAreDifferent::class)
     fun getLastMatch_isWrongArgumentCalled() {
         footBallRest.getLastmatch("123")
-        verify(footBallRest).getLastmatch("1234")
+        verify(footBallRest).getLastmatch("")
     }
 
     @Test
@@ -45,7 +45,7 @@ class FootBallRestKtTest {
     @Test(expected = ArgumentsAreDifferent::class)
     fun getUpcomingMatch_isWrongArgumentCalled() {
         footBallRest.getUpcomingMatch("123")
-        verify(footBallRest).getUpcomingMatch("1234")
+        verify(footBallRest).getUpcomingMatch("")
     }
 
     @Test
@@ -63,7 +63,7 @@ class FootBallRestKtTest {
     @Test(expected = ArgumentsAreDifferent::class)
     fun getMatchDetail_isWrongArgumentCalled() {
         footBallRest.getMatchDetail("123")
-        verify(footBallRest).getMatchDetail("1234")
+        verify(footBallRest).getMatchDetail("")
     }
 
     @Test
@@ -81,7 +81,7 @@ class FootBallRestKtTest {
     @Test(expected = ArgumentsAreDifferent::class)
     fun getTeam_isWrongArgumentCalled() {
         footBallRest.getTeam("123")
-        verify(footBallRest).getTeam("1234")
+        verify(footBallRest).getTeam("")
     }
 
     @Test
