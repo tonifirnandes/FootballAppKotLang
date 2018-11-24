@@ -6,12 +6,12 @@ import com.muslimlife.tf.footballappkotlang.data.api.FootBallRestService
 import com.muslimlife.tf.footballappkotlang.data.db.FavoriteMatchLocalDb
 import com.muslimlife.tf.footballappkotlang.data.model.Event
 import com.muslimlife.tf.footballappkotlang.data.model.FavoriteMatch
+import com.muslimlife.tf.footballappkotlang.extensions.rx.BaseSchedulerProvider
 import com.muslimlife.tf.footballappkotlang.generics.BasePresenter
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
 
-class MatchScheduleDetailPresenter : MatchScheduleDetailContract.Presenter,
+class MatchScheduleDetailPresenter(private val scheduler: BaseSchedulerProvider) :
+    MatchScheduleDetailContract.Presenter,
     BasePresenter<MatchScheduleDetailContract.View>() {
 
     private var compositeDisposable: CompositeDisposable = CompositeDisposable()
@@ -36,8 +36,8 @@ class MatchScheduleDetailPresenter : MatchScheduleDetailContract.Presenter,
         view?.showDetailActivityActionLoading()
         compositeDisposable.add(
             service.getMatchDetail(eventId)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
+                .observeOn(scheduler.ui())
+                .subscribeOn(scheduler.io())
                 .subscribe({
                     view?.onSetupViewSuccess(it.events[0])
                 }, {
@@ -49,8 +49,8 @@ class MatchScheduleDetailPresenter : MatchScheduleDetailContract.Presenter,
     override fun getHomeTeamBadge(id: String) {
         compositeDisposable.add(
             service.getTeam(id)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
+                .observeOn(scheduler.ui())
+                .subscribeOn(scheduler.io())
                 .subscribe({
                     view?.onGetHomeTeamBadgeSuccess(it.teams[0].badgeUrl)
                 }, {
@@ -62,8 +62,8 @@ class MatchScheduleDetailPresenter : MatchScheduleDetailContract.Presenter,
     override fun getAwayTeamBadge(id: String) {
         compositeDisposable.add(
             service.getTeam(id)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
+                .observeOn(scheduler.ui())
+                .subscribeOn(scheduler.io())
                 .subscribe({
                     view?.onGetAwayTeamBadgeSuccess(it.teams[0].badgeUrl)
                 }, {
@@ -91,8 +91,8 @@ class MatchScheduleDetailPresenter : MatchScheduleDetailContract.Presenter,
                     awayTeamScore = event.awayScoreNumber
                 )
             )
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
+                .observeOn(scheduler.ui())
+                .subscribeOn(scheduler.io())
                 .subscribe({
                     view?.onSetFavoriteView(true)
                     view?.onSaveFavoriteMatchSuccess()
@@ -108,8 +108,8 @@ class MatchScheduleDetailPresenter : MatchScheduleDetailContract.Presenter,
         }
         compositeDisposable.add(
             FavoriteMatchLocalDb(context).isFavorite(matchId)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
+                .observeOn(scheduler.ui())
+                .subscribeOn(scheduler.io())
                 .subscribe {
                     view?.onSetFavoriteView(it)
                 })
@@ -123,8 +123,8 @@ class MatchScheduleDetailPresenter : MatchScheduleDetailContract.Presenter,
         view?.onUnFavoriteMatchLoading()
         compositeDisposable.add(
             FavoriteMatchLocalDb(context).delete(matchId)
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
+                .observeOn(scheduler.ui())
+                .subscribeOn(scheduler.io())
                 .subscribe({
                     view?.onSetFavoriteView(false)
                     view?.onUnFavoriteMatchSuccess()

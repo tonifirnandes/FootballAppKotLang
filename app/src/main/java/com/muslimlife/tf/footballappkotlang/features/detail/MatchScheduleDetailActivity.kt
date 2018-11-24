@@ -14,12 +14,15 @@ import com.muslimlife.tf.footballappkotlang.R.menu.detail_activity_options_menu
 import com.muslimlife.tf.footballappkotlang.data.model.Event
 import com.muslimlife.tf.footballappkotlang.data.model.FavoriteMatch
 import com.muslimlife.tf.footballappkotlang.extensions.*
+import com.muslimlife.tf.footballappkotlang.extensions.rx.SchedulerProvider
 import kotlinx.android.synthetic.main.match_schedule_detail_activity.*
 import org.jetbrains.anko.design.snackbar
 
 class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailContract.View {
 
-    private val matchScheduleDetailPresenter: MatchScheduleDetailPresenter = MatchScheduleDetailPresenter()
+    private val matchScheduleDetailPresenter: MatchScheduleDetailPresenter = MatchScheduleDetailPresenter(
+        SchedulerProvider()
+    )
     private var menuItem: MenuItem? = null
     private var isFavoriteMatch: Boolean = false
     private var event: Event? = null
