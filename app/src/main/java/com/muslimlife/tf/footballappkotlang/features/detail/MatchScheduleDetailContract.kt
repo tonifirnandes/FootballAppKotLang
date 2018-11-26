@@ -2,7 +2,7 @@ package com.muslimlife.tf.footballappkotlang.features.detail
 
 import android.content.Context
 import com.muslimlife.tf.footballappkotlang.data.model.Event
-import com.muslimlife.tf.footballappkotlang.data.model.FavoriteMatch
+import com.muslimlife.tf.footballappkotlang.data.model.local_db.FavoriteMatch
 import com.muslimlife.tf.footballappkotlang.generics.BaseMvpPresenter
 import com.muslimlife.tf.footballappkotlang.generics.BaseView
 

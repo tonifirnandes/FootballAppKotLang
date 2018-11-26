@@ -5,7 +5,7 @@ import com.muslimlife.tf.footballappkotlang.data.api.FootBallRest
 import com.muslimlife.tf.footballappkotlang.data.api.FootBallRestService
 import com.muslimlife.tf.footballappkotlang.data.db.FavoriteMatchLocalDb
 import com.muslimlife.tf.footballappkotlang.data.model.Event
-import com.muslimlife.tf.footballappkotlang.data.model.FavoriteMatch
+import com.muslimlife.tf.footballappkotlang.data.model.local_db.FavoriteMatch
 import com.muslimlife.tf.footballappkotlang.extensions.rx.BaseSchedulerProvider
 import com.muslimlife.tf.footballappkotlang.generics.BasePresenter
 import io.reactivex.disposables.CompositeDisposable
@@ -35,7 +35,7 @@ class MatchScheduleDetailPresenter(private val scheduler: BaseSchedulerProvider)
     override fun getEventDetailsById(eventId: String) {
         view?.showDetailActivityActionLoading()
         compositeDisposable.add(
-            service.getMatchDetail(eventId)
+            service.getMatchDetailById(eventId)
                 .observeOn(scheduler.ui())
                 .subscribeOn(scheduler.io())
                 .subscribe({
@@ -48,7 +48,7 @@ class MatchScheduleDetailPresenter(private val scheduler: BaseSchedulerProvider)
 
     override fun getHomeTeamBadge(id: String) {
         compositeDisposable.add(
-            service.getTeam(id)
+            service.getTeamById(id)
                 .observeOn(scheduler.ui())
                 .subscribeOn(scheduler.io())
                 .subscribe({
@@ -61,7 +61,7 @@ class MatchScheduleDetailPresenter(private val scheduler: BaseSchedulerProvider)
 
     override fun getAwayTeamBadge(id: String) {
         compositeDisposable.add(
-            service.getTeam(id)
+            service.getTeamById(id)
                 .observeOn(scheduler.ui())
                 .subscribeOn(scheduler.io())
                 .subscribe({

@@ -3,7 +3,7 @@ package com.muslimlife.tf.footballappkotlang.features.detail
 import com.muslimlife.tf.footballappkotlang.data.api.FootBallRest
 import com.muslimlife.tf.footballappkotlang.data.model.Event
 import com.muslimlife.tf.footballappkotlang.data.model.Events
-import com.muslimlife.tf.footballappkotlang.data.model.FavoriteMatch
+import com.muslimlife.tf.footballappkotlang.data.model.local_db.FavoriteMatch
 import com.muslimlife.tf.footballappkotlang.extensions.rx.BaseSchedulerProvider
 import com.muslimlife.tf.footballappkotlang.extensions.rx.TestSchedulerProvider
 import io.reactivex.Flowable
@@ -76,9 +76,9 @@ class MatchScheduleDetailPresenterTest {
     fun setupViewWithFavoriteEventData_isValid() {
         mPresenter.setupView(null, favoriteEventMock)
         verify(mViewMock).showDetailActivityActionLoading()
-        `when`(footBallRest.getMatchDetail(ArgumentMatchers.anyString())).thenReturn(Flowable.just(eventListMock))
-        footBallRest.getMatchDetail(ArgumentMatchers.anyString())
-        verify(footBallRest).getMatchDetail(ArgumentMatchers.anyString())
+        `when`(footBallRest.getMatchDetailById(ArgumentMatchers.anyString())).thenReturn(Flowable.just(eventListMock))
+        footBallRest.getMatchDetailById(ArgumentMatchers.anyString())
+        verify(footBallRest).getMatchDetailById(ArgumentMatchers.anyString())
         mViewMock.onSetupViewSuccess(eventMock)
         verify(mViewMock).onSetupViewSuccess(eventMock)
     }

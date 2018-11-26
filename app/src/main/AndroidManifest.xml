@@ -21,6 +21,8 @@
         </activity>
 
         <activity android:name=".features.detail.MatchScheduleDetailActivity"/>
+        <activity android:name=".features.team.detail.TeamDetailActivity"/>
+        <activity android:name=".features.team.detail.player.detail.TeamPlayerDetailActivity"/>
 
     </application>
 

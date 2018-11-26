@@ -1,4 +1,4 @@
-package com.muslimlife.tf.footballappkotlang.features.favorite
+package com.muslimlife.tf.footballappkotlang.features.favorite.match
 
 import android.content.Context
 import com.muslimlife.tf.footballappkotlang.data.db.FavoriteMatchLocalDb

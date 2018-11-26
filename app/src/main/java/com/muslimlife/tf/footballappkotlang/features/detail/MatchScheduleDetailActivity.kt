@@ -12,7 +12,7 @@ import com.muslimlife.tf.footballappkotlang.R.drawable.ic_add_to_favorites
 import com.muslimlife.tf.footballappkotlang.R.drawable.ic_favorited
 import com.muslimlife.tf.footballappkotlang.R.menu.detail_activity_options_menu
 import com.muslimlife.tf.footballappkotlang.data.model.Event
-import com.muslimlife.tf.footballappkotlang.data.model.FavoriteMatch
+import com.muslimlife.tf.footballappkotlang.data.model.local_db.FavoriteMatch
 import com.muslimlife.tf.footballappkotlang.extensions.*
 import com.muslimlife.tf.footballappkotlang.extensions.rx.SchedulerProvider
 import kotlinx.android.synthetic.main.match_schedule_detail_activity.*
@@ -143,7 +143,7 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
             snackbar(
                 sv_detail_root_view, getString(R.string.str_generic_error_failed),
                 getString(R.string.str_back)
-            ) { finish() }
+            ) { onBackPressed() }
         }
     }
 

@@ -34,10 +34,19 @@ class LocalSqliteOpenHelpster(context: Context) : ManagedSQLiteOpenHelper(
             DbConstant.Companion.FavoriteMatchTable.Column.awayTeamName to TEXT,
             DbConstant.Companion.FavoriteMatchTable.Column.awayTeamScore to TEXT
         )
+
+        db?.createTable(
+            DbConstant.Companion.FavoriteTeamTable.name, true,
+            DbConstant.Companion.FavoriteTeamTable.Column.id to INTEGER + PRIMARY_KEY + AUTOINCREMENT,
+            DbConstant.Companion.FavoriteTeamTable.Column.teamId to TEXT + UNIQUE,
+            DbConstant.Companion.FavoriteTeamTable.Column.teamName to TEXT,
+            DbConstant.Companion.FavoriteTeamTable.Column.teamLogoUrl to TEXT
+        )
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db?.dropTable(DbConstant.Companion.FavoriteMatchTable.name, true)
+        db?.dropTable(DbConstant.Companion.FavoriteTeamTable.name, true)
     }
 
 }

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+            android:padding="@dimen/medium_space_size"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:weightSum="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <!--player weight-->
+            <LinearLayout
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:textSize="@dimen/player_weight_height_info_title_size"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:id="@+id/tv_player_weight_title"
+                        android:text="@string/str_player_weight_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:textSize="@dimen/player_weight_height_info_size"
+                        android:textColor="@color/colorAccent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:id="@+id/tv_player_weight_value"
+                        tools:text="@string/str_player_weight_title"
+                        android:text="@string/str_player_weight_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_weight="0.5"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:textSize="@dimen/player_weight_height_info_title_size"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:id="@+id/tv_player_height_title"
+                        android:text="@string/str_player_height_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:textSize="@dimen/player_weight_height_info_size"
+                        android:textColor="@color/colorAccent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:id="@+id/tv_player_height_value"
+                        tools:text="@string/str_player_weight_title"
+                        android:text="@string/str_player_weight_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+                android:layout_margin="@dimen/normal_space_size"
+                android:id="@+id/tv_player_position"
+                android:textSize="@dimen/player_position_size"
+                android:textColor="@color/colorAccent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                tools:text="@string/str_player_weight_title"
+                android:text="@string/str_player_weight_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:id="@+id/tv_player_description"
+                style="@style/TextAppearance.AppCompat.Medium"
+                tools:text="@string/str_player_weight_title"
+                android:text="@string/str_player_weight_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

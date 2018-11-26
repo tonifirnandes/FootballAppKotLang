@@ -6,6 +6,8 @@ import kotlinx.android.parcel.Parcelize
 
 data class Events(val events: List<Event>)
 
+data class SearchEvents(val event: List<Event>)
+
 @Parcelize
 data class Event(
     @SerializedName(EventFieldKey.eventName) val name: String,

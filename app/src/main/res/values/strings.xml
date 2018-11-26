@@ -4,6 +4,7 @@
     <string name="str_retry">Retry</string>
     <string name="str_back">Back</string>
     <string name="str_nav_home">Home</string>
+    <string name="str_nav_team">Team</string>
     <string name="str_nav_favorite">Favorite</string>
     <string name="str_generic_error_failed">Sorry, There was something wrong</string>
     <string name="str_save_favorite_success">Add to favorite success</string>
@@ -19,6 +20,11 @@
         <item>Next Match</item>
     </string-array>
 
+    <string-array name="favorite_menus">
+        <item>Mathces</item>
+        <item>Teams</item>
+    </string-array>
+
     <!--match details view-->
     <string name="str_goals_summary_title">Goals</string>
     <string name="str_shoots_summary_title">Shots</string>
@@ -30,5 +36,13 @@
     <string name="str_lineups_substitutes_detail_title">substitutes</string>
     <string name="str_detail_favorite_option_menu">Favorite</string>
 
+    <!--team detail-->
+    <string-array name="team_tab_info_types">
+        <item>Overview</item>
+        <item>Player</item>
+    </string-array>
 
+    <!--player details-->
+    <string name="str_player_weight_title">Weight (Kg)</string>
+    <string name="str_player_height_title">Height (m)</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.muslimlife.tf.footballappkotlang.features.favorite
+package com.muslimlife.tf.footballappkotlang.features.favorite.match
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.muslimlife.tf.footballappkotlang.R
-import com.muslimlife.tf.footballappkotlang.data.model.FavoriteMatch
+import com.muslimlife.tf.footballappkotlang.data.model.local_db.FavoriteMatch
 import com.muslimlife.tf.footballappkotlang.extensions.GenericDateFormatConstant
 import com.muslimlife.tf.footballappkotlang.extensions.adjustTimePattern
 import com.muslimlife.tf.footballappkotlang.features.detail.MatchScheduleDetailActivity

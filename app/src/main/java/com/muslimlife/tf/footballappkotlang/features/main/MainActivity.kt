@@ -4,8 +4,9 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import com.muslimlife.tf.footballappkotlang.R
-import com.muslimlife.tf.footballappkotlang.features.favorite.FavoritesMatchFragment
+import com.muslimlife.tf.footballappkotlang.features.favorite.BaseFavoriteFragment
 import com.muslimlife.tf.footballappkotlang.features.home.HomeFragment
+import com.muslimlife.tf.footballappkotlang.features.team.list.TeamsFragment
 import kotlinx.android.synthetic.main.main_activity.*
 
 class MainActivity : AppCompatActivity() {
@@ -20,8 +21,12 @@ class MainActivity : AppCompatActivity() {
                     replaceContainer(HomeFragment.newInstance())
                     true
                 }
+                R.id.nav_team -> {
+                    replaceContainer(TeamsFragment.newInstance())
+                    true
+                }
                 R.id.nav_favorite -> {
-                    replaceContainer(FavoritesMatchFragment.newInstance())
+                    replaceContainer(BaseFavoriteFragment.newInstance())
                     true
                 }
                 else -> {

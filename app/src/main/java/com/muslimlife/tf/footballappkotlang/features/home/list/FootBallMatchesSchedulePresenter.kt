@@ -26,7 +26,7 @@ class FootBallMatchesSchedulePresenter
     private fun getLastFifteenSoccerMatchByLeagueId(id: String) {
         view?.showGetMatchesScheduleLoading()
         compositeDisposable.add(
-            service.getLastmatch(id)
+            service.getLastmatchByLeagueId(id)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe({
@@ -40,7 +40,7 @@ class FootBallMatchesSchedulePresenter
     private fun getNextFifteenSoccerMatchByLeagueId(id: String) {
         view?.showGetMatchesScheduleLoading()
         compositeDisposable.add(
-            service.getUpcomingMatch(id)
+            service.getUpcomingMatchByLeagueId(id)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe({

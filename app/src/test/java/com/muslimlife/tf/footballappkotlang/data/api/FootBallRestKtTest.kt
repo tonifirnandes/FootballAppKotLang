@@ -20,74 +20,74 @@ class FootBallRestKtTest {
 
     @Test
     fun getLastMatch_isValid() {
-        footBallRest.getLastmatch("123")
-        verify(footBallRest).getLastmatch("123")
+        footBallRest.getLastmatchByLeagueId("123")
+        verify(footBallRest).getLastmatchByLeagueId("123")
     }
 
     @Test(expected = ArgumentsAreDifferent::class)
     fun getLastMatch_isWrongArgumentCalled() {
-        footBallRest.getLastmatch("123")
-        verify(footBallRest).getLastmatch("")
+        footBallRest.getLastmatchByLeagueId("123")
+        verify(footBallRest).getLastmatchByLeagueId("")
     }
 
     @Test
     fun getLastMatch_isWrongMethodCalled() {
-        footBallRest.getLastmatch("123")
-        verify(footBallRest, never()).getUpcomingMatch("123")
+        footBallRest.getLastmatchByLeagueId("123")
+        verify(footBallRest, never()).getUpcomingMatchByLeagueId("123")
     }
 
     @Test
     fun getUpcomingMatch_isValid() {
-        footBallRest.getUpcomingMatch("123")
-        verify(footBallRest).getUpcomingMatch("123")
+        footBallRest.getUpcomingMatchByLeagueId("123")
+        verify(footBallRest).getUpcomingMatchByLeagueId("123")
     }
 
     @Test(expected = ArgumentsAreDifferent::class)
     fun getUpcomingMatch_isWrongArgumentCalled() {
-        footBallRest.getUpcomingMatch("123")
-        verify(footBallRest).getUpcomingMatch("")
+        footBallRest.getUpcomingMatchByLeagueId("123")
+        verify(footBallRest).getUpcomingMatchByLeagueId("")
     }
 
     @Test
     fun getUpcomingMatch_isWrongMethodCalled() {
-        footBallRest.getUpcomingMatch("123")
-        verify(footBallRest, never()).getLastmatch("123")
+        footBallRest.getUpcomingMatchByLeagueId("123")
+        verify(footBallRest, never()).getLastmatchByLeagueId("123")
     }
 
     @Test
     fun getMatchDetail_isValid() {
-        footBallRest.getMatchDetail("123")
-        verify(footBallRest).getMatchDetail("123")
+        footBallRest.getMatchDetailById("123")
+        verify(footBallRest).getMatchDetailById("123")
     }
 
     @Test(expected = ArgumentsAreDifferent::class)
     fun getMatchDetail_isWrongArgumentCalled() {
-        footBallRest.getMatchDetail("123")
-        verify(footBallRest).getMatchDetail("")
+        footBallRest.getMatchDetailById("123")
+        verify(footBallRest).getMatchDetailById("")
     }
 
     @Test
     fun getMatchDetail_isWrongMethodCalled() {
-        footBallRest.getMatchDetail("123")
-        verify(footBallRest, never()).getTeam("123")
+        footBallRest.getMatchDetailById("123")
+        verify(footBallRest, never()).getTeamById("123")
     }
 
     @Test
     fun getTeam_isValid() {
-        footBallRest.getTeam("123")
-        verify(footBallRest).getTeam("123")
+        footBallRest.getTeamById("123")
+        verify(footBallRest).getTeamById("123")
     }
 
     @Test(expected = ArgumentsAreDifferent::class)
     fun getTeam_isWrongArgumentCalled() {
-        footBallRest.getTeam("123")
-        verify(footBallRest).getTeam("")
+        footBallRest.getTeamById("123")
+        verify(footBallRest).getTeamById("")
     }
 
     @Test
     fun getTeam_isWrongMethodCalled() {
-        footBallRest.getTeam("123")
-        verify(footBallRest, never()).getMatchDetail("123")
+        footBallRest.getTeamById("123")
+        verify(footBallRest, never()).getMatchDetailById("123")
     }
 
     @Test
@@ -99,6 +99,6 @@ class FootBallRestKtTest {
     @Test
     fun getAllLeagues_isWrongMethodCalled() {
         footBallRest.getAllLeagues()
-        verify(footBallRest, never()).getMatchDetail("123")
+        verify(footBallRest, never()).getMatchDetailById("123")
     }
 }

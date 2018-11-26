@@ -2,7 +2,7 @@ package com.muslimlife.tf.footballappkotlang.data.db
 
 import android.content.Context
 import android.database.sqlite.SQLiteException
-import com.muslimlife.tf.footballappkotlang.data.model.FavoriteMatch
+import com.muslimlife.tf.footballappkotlang.data.model.local_db.FavoriteMatch
 import com.muslimlife.tf.footballappkotlang.extensions.localDb
 import io.reactivex.Observable
 import org.jetbrains.anko.db.classParser

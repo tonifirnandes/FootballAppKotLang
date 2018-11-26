@@ -19,5 +19,16 @@ class DbConstant {
                 const val awayTeamScore: String = "awayTeamScore"
             }
         }
+
+        object FavoriteTeamTable {
+            const val name: String = "tbl_favorite_team"
+
+            object Column {
+                const val id: String = "id"
+                const val teamId: String = "teamId"
+                const val teamName: String = "teamName"
+                const val teamLogoUrl: String = "teamLogoUrl"
+            }
+        }
     }
 }

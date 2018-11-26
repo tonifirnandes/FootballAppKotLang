@@ -1,8 +1,6 @@
 package com.muslimlife.tf.footballappkotlang.data.api
 
-import com.muslimlife.tf.footballappkotlang.data.model.Events
-import com.muslimlife.tf.footballappkotlang.data.model.Leagues
-import com.muslimlife.tf.footballappkotlang.data.model.Teams
+import com.muslimlife.tf.footballappkotlang.data.model.*
 import io.reactivex.Flowable
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -10,17 +8,32 @@ import retrofit2.http.Query
 interface FootBallRest {
 
     @GET(FootBallRestConstant.lastFifteenMatchesEndPoint)
-    fun getLastmatch(@Query(FootBallRestConstant.queryParamsId) id: String): Flowable<Events>
+    fun getLastmatchByLeagueId(@Query(FootBallRestConstant.queryParamsId) id: String): Flowable<Events>
 
     @GET(FootBallRestConstant.nextFifteenMatchesEndPoint)
-    fun getUpcomingMatch(@Query(FootBallRestConstant.queryParamsId) id: String): Flowable<Events>
+    fun getUpcomingMatchByLeagueId(@Query(FootBallRestConstant.queryParamsId) id: String): Flowable<Events>
 
     @GET(FootBallRestConstant.eventDetailsEndPoint)
-    fun getMatchDetail(@Query(FootBallRestConstant.queryParamsId) matchId: String): Flowable<Events>
+    fun getMatchDetailById(@Query(FootBallRestConstant.queryParamsId) matchId: String): Flowable<Events>
 
     @GET(FootBallRestConstant.teamDetailsEndPoint)
-    fun getTeam(@Query(FootBallRestConstant.queryParamsId) id: String): Flowable<Teams>
+    fun getTeamById(@Query(FootBallRestConstant.queryParamsId) id: String): Flowable<Teams>
 
     @GET(FootBallRestConstant.allLeaguesEndPoint)
     fun getAllLeagues(): Flowable<Leagues>
+
+    @GET(FootBallRestConstant.searchEventEndPoint)
+    fun searchMatchesByEventName(@Query(FootBallRestConstant.querySearchEventParam) query: String?): Flowable<SearchEvents>
+
+    @GET(FootBallRestConstant.searchTeamEndPoint)
+    fun searchTeamsByTeamName(@Query(FootBallRestConstant.querySearchTeamParam) query: String): Flowable<Teams>
+
+    @GET(FootBallRestConstant.allTeamsEndPoint)
+    fun getAllTeamsByLeagueId(@Query(FootBallRestConstant.queryParamsId) id: String): Flowable<Teams>
+
+    @GET(FootBallRestConstant.allPlayersEndPoint)
+    fun getAllPlayersByTeamId(@Query(FootBallRestConstant.queryParamsId) id: String?): Flowable<FootBallPlayerList>
+
+    @GET(FootBallRestConstant.playerDetailByIdEndPoint)
+    fun getPlayerDetailById(@Query(FootBallRestConstant.queryParamsId) id: String?): Flowable<FootBallPlayerDetail>
 }

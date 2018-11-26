@@ -5,4 +5,18 @@
     <dimen name="normal_space_size">8dp</dimen>
     <dimen name="medium_space_size">16dp</dimen>
     <dimen name="bnv_main_size">56dp</dimen>
+
+    <!--teamlist-->
+    <dimen name="team_list_club_logo_size">56dp</dimen>
+
+    <!--collapsing toolbar-->
+    <dimen name="collapsing_expanding_title_start_margin_size">48dp</dimen>
+    <dimen name="collapsing_expanding_title_end_margin_size">96dp</dimen>
+
+    <!--player detail activity-->
+    <dimen name="player_banner_height_size">220dp</dimen>
+    <dimen name="player_weight_height_info_title_size">18sp</dimen>
+    <dimen name="player_weight_height_info_size">36sp</dimen>
+    <dimen name="player_position_size">18sp</dimen>
+
 </resources>

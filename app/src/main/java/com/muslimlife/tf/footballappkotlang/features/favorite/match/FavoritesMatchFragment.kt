@@ -1,4 +1,4 @@
-package com.muslimlife.tf.footballappkotlang.features.favorite
+package com.muslimlife.tf.footballappkotlang.features.favorite.match
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -7,17 +7,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.muslimlife.tf.footballappkotlang.R
-import com.muslimlife.tf.footballappkotlang.data.model.FavoriteMatch
+import com.muslimlife.tf.footballappkotlang.data.model.local_db.FavoriteMatch
 import com.muslimlife.tf.footballappkotlang.extensions.hide
 import com.muslimlife.tf.footballappkotlang.extensions.show
 import kotlinx.android.synthetic.main.football_match_schedule_fragment.*
 
-class FavoritesMatchFragment : Fragment(), FavoritesMatchContract.View {
+class FavoritesMatchFragment : Fragment(),
+    FavoritesMatchContract.View {
 
-    private val matchesSchedulePresenter: FavoritesMatchPresenter = FavoritesMatchPresenter()
+    private val matchesSchedulePresenter: FavoritesMatchPresenter =
+        FavoritesMatchPresenter()
 
     companion object {
-        fun newInstance(): FavoritesMatchFragment = FavoritesMatchFragment()
+        fun newInstance(): FavoritesMatchFragment =
+            FavoritesMatchFragment()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -48,7 +51,10 @@ class FavoritesMatchFragment : Fragment(), FavoritesMatchContract.View {
         val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         rv_match_schedule.layoutManager = layoutManager
         rv_match_schedule.adapter =
-                FavoritesMatchAdapter(favoriteMatchList, context)
+                FavoritesMatchAdapter(
+                    favoriteMatchList,
+                    context
+                )
     }
 
     override fun onGetFavoritesMatchFailed() {

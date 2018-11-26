@@ -1,7 +1,7 @@
-package com.muslimlife.tf.footballappkotlang.features.favorite
+package com.muslimlife.tf.footballappkotlang.features.favorite.match
 
 import android.content.Context
-import com.muslimlife.tf.footballappkotlang.data.model.FavoriteMatch
+import com.muslimlife.tf.footballappkotlang.data.model.local_db.FavoriteMatch
 import com.muslimlife.tf.footballappkotlang.generics.BaseMvpPresenter
 import com.muslimlife.tf.footballappkotlang.generics.BaseView
 
@@ -12,7 +12,7 @@ interface FavoritesMatchContract {
         fun onGetFavoritesMatchFailed()
     }
 
-    interface Presenter : BaseMvpPresenter<FavoritesMatchContract.View> {
+    interface Presenter : BaseMvpPresenter<View> {
         fun getSavedFavoritesMatchLocally(context: Context?)
     }
 }

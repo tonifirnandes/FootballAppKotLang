@@ -1,4 +1,4 @@
-package com.muslimlife.tf.footballappkotlang.data.model
+package com.muslimlife.tf.footballappkotlang.data.model.local_db
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
