@@ -2,7 +2,7 @@ package com.muslimlife.tf.footballappkotlang.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Leagues(val leagues: List<League>)
+data class Leagues(val leagues: List<League>, val selectedLeagueId: String, val selectedLeagueName: String)
 
 data class League(
     @SerializedName(LeagueFieldKey.id)

@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.muslimlife.tf.footballappkotlang.R
 import com.muslimlife.tf.footballappkotlang.data.model.local_db.FavoriteMatch
 import com.muslimlife.tf.footballappkotlang.extensions.GenericDateFormatConstant
-import com.muslimlife.tf.footballappkotlang.extensions.adjustTimePattern
+import com.muslimlife.tf.footballappkotlang.extensions.adjustTimePatternWithTimezone
 import com.muslimlife.tf.footballappkotlang.features.detail.MatchScheduleDetailActivity
 import kotlinx.android.synthetic.main.football_match_schedule_item.view.*
 import org.jetbrains.anko.startActivity
@@ -34,10 +34,19 @@ class FavoritesMatchAdapter(private val scheduleList: List<FavoriteMatch>, priva
 
     inner class ClubViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(event: FavoriteMatch) {
-            itemView.tv_schedule_date.text = event.matchDate.adjustTimePattern(
-                GenericDateFormatConstant.originEventDateTimeFormat,
-                GenericDateFormatConstant.matchEventDateTimeFormat
-            )
+            if (event.matchDate != null && event.matchTime != null) {
+                val dateTime = event.matchDate + " " + event.matchTime
+                itemView.tv_schedule_date.text = dateTime.adjustTimePatternWithTimezone(
+                    GenericDateFormatConstant.originEventDateTimeFormatWithTimeZone,
+                    GenericDateFormatConstant.matchEventDateTimeFormat,
+                    GenericDateFormatConstant.timeZoneGMT7
+                )
+                itemView.tv_schedule_time.text = dateTime.adjustTimePatternWithTimezone(
+                    GenericDateFormatConstant.originEventDateTimeFormatWithTimeZone,
+                    GenericDateFormatConstant.matchEventTimeFormat,
+                    GenericDateFormatConstant.timeZoneGMT7
+                )
+            }
             itemView.tv_hometeam_name.text = event.homeTeamName
             itemView.tv_hometeam_score.text = event.homeTeamScore
             itemView.tv_awayteam_name.text = event.awayTeamName

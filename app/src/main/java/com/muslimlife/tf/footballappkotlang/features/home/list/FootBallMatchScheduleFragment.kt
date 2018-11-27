@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.football_match_schedule_fragment.*
 
 class FootBallMatchScheduleFragment : Fragment(), FootBallMatchesScheduleContract.View {
 
+    private var scheduleType: Int = -1
     private val matchesSchedulePresenter: FootBallMatchesSchedulePresenter = FootBallMatchesSchedulePresenter()
 
     companion object {
@@ -38,8 +39,9 @@ class FootBallMatchScheduleFragment : Fragment(), FootBallMatchesScheduleContrac
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         matchesSchedulePresenter.attach(this)
+        scheduleType = arguments?.getInt(arg_schedule_type) ?: -1
         matchesSchedulePresenter.getMatchesScheduleByType(
-            arguments?.getInt(arg_schedule_type),
+            scheduleType,
             arguments?.get(arg_league_id).toString()
         )
     }
@@ -58,7 +60,7 @@ class FootBallMatchScheduleFragment : Fragment(), FootBallMatchesScheduleContrac
         val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         rv_match_schedule.layoutManager = layoutManager
         rv_match_schedule.adapter =
-                MatchScheduleAdapter(matchScheduleList, context)
+                MatchScheduleAdapter(matchScheduleList, context, scheduleType)
     }
 
     override fun onGetMatchesScheduleFailed() {

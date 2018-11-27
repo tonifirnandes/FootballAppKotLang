@@ -186,16 +186,25 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
     }
 
     private fun showMatchSummaryView(event: Event?) {
-        if (event?.date != null) {
-            tv_match_date.text = event.date.adjustTimePattern(
-                GenericDateFormatConstant.originEventDateTimeFormat,
-                GenericDateFormatConstant.matchEventDateTimeFormat
+        if (event?.date != null && event.time != null) {
+            val dateTime = event.date + " " + event.time
+            tv_match_date.text = dateTime.adjustTimePatternWithTimezone(
+                GenericDateFormatConstant.originEventDateTimeFormatWithTimeZone,
+                GenericDateFormatConstant.matchEventDateTimeFormat,
+                GenericDateFormatConstant.timeZoneGMT7
+            )
+            tv_match_time.text = dateTime.adjustTimePatternWithTimezone(
+                GenericDateFormatConstant.originEventDateTimeFormatWithTimeZone,
+                GenericDateFormatConstant.matchEventTimeFormat,
+                GenericDateFormatConstant.timeZoneGMT7
             )
         }
         tv_home_team_name.text = event?.homeTeamName
         tv_home_team_score.text = event?.homeScoreNumber
+        tv_home_team_formation.text = event?.homeTeamFormation
         tv_away_team_name.text = event?.awayTeamName
         tv_away_team_score.text = event?.awayScoreNumber
+        tv_away_team_formation.text = event?.awayTeamFormation
     }
 
     private fun showMatchGoalsView(event: Event?) {

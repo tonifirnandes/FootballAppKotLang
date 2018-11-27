@@ -17,5 +17,6 @@ class FootBallRestConstant {
         const val apiSoccerCategory: String = "Soccer"
         const val querySearchEventParam: String = "e"
         const val querySearchTeamParam: String = "t"
+        const val defaultSelectedLeagueId: String = "4328"
     }
 }

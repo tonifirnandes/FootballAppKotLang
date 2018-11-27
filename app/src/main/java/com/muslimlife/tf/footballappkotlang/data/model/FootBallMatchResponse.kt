@@ -11,7 +11,7 @@ data class SearchEvents(val event: List<Event>)
 @Parcelize
 data class Event(
     @SerializedName(EventFieldKey.eventName) val name: String,
-    @SerializedName(EventFieldKey.eventDate) val date: String,
+    @SerializedName(EventFieldKey.eventDate) val date: String?,
     @SerializedName(EventFieldKey.awayTeamId) val awayTeamId: String,
     @SerializedName(EventFieldKey.eventId) val id: String,
     @SerializedName(EventFieldKey.homeTeamId) val homeTeamId: String,
@@ -33,5 +33,8 @@ data class Event(
     @SerializedName(EventFieldKey.homeLineupsubstitutes) val homeLineupSubstitutes: String?,
     @SerializedName(EventFieldKey.homeTeamName) val homeTeamName: String,
     @SerializedName(EventFieldKey.homeTeamShotsNumber) val homeTeamShotsNumber: String?,
-    @SerializedName(EventFieldKey.awayTeamShotsNumber) val awayTeamShotsNumber: String?
+    @SerializedName(EventFieldKey.awayTeamShotsNumber) val awayTeamShotsNumber: String?,
+    @SerializedName(EventFieldKey.homeTeamFormation) val homeTeamFormation: String?,
+    @SerializedName(EventFieldKey.awayTeamFormation) val awayTeamFormation: String?,
+    @SerializedName(EventFieldKey.eventTime) val time: String?
 ) : Parcelable

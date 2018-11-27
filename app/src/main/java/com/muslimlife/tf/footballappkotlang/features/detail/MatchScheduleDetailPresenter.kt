@@ -85,6 +85,7 @@ class MatchScheduleDetailPresenter(private val scheduler: BaseSchedulerProvider)
                     matchId = event.id,
                     matchName = event.name,
                     matchDate = event.date,
+                    matchTime = event.time,
                     homeTeamName = event.homeTeamName,
                     homeTeamScore = event.homeScoreNumber,
                     awayTeamName = event.awayTeamName,

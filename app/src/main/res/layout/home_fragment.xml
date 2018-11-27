@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/home_view_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/transparent">
 
     <android.support.design.widget.TabLayout
+            android:visibility="gone"
             android:id="@+id/tabs_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+    <Spinner
+            android:visibility="gone"
+            android:layout_below="@id/tabs_main"
+            android:id="@+id/sp_leagues"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_space_size"/>
+
     <android.support.v4.view.ViewPager
+            android:visibility="gone"
             android:id="@+id/viewpager_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/tabs_main"/>
+            android:layout_below="@+id/sp_leagues"/>
 
     <ProgressBar
             android:layout_centerInParent="true"

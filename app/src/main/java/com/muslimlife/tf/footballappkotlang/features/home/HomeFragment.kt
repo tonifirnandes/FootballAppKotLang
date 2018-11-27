@@ -5,8 +5,11 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import com.muslimlife.tf.footballappkotlang.R
 import com.muslimlife.tf.footballappkotlang.data.model.League
+import com.muslimlife.tf.footballappkotlang.data.preference.SharedPrefs
 import com.muslimlife.tf.footballappkotlang.extensions.hide
 import com.muslimlife.tf.footballappkotlang.extensions.show
 import kotlinx.android.synthetic.main.home_fragment.*
@@ -29,7 +32,6 @@ class HomeFragment : Fragment(), HomeContract.View {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        firstInitHomeView()
         homePresenter.attach(this)
         homePresenter.getAllLeagues()
     }
@@ -53,15 +55,22 @@ class HomeFragment : Fragment(), HomeContract.View {
 
     override fun onGetAllLeaguesSuccess(soccerLeagues: List<League>) {
         pb_home.hide()
-        selectedLeagueId = soccerLeagues[0].id
-        selectedLeagueName = soccerLeagues[0].name
-        if (fragmentManager == null) {
+        selectedLeagueId = SharedPrefs.selectedLeagueId ?: soccerLeagues[0].id
+        selectedLeagueName = SharedPrefs.selectedLeagueName ?: soccerLeagues[0].name
+        SharedPrefs.selectedLeagueId = selectedLeagueId
+        SharedPrefs.selectedLeagueName = selectedLeagueName
+        if (fragmentManager == null || context == null) {
             snackbar(
                 home_view_root, getString(R.string.str_generic_error_failed),
                 getString(R.string.str_retry)
             ) { onGetAllLeaguesSuccess(soccerLeagues) }
             return
         }
+        initMatchesView()
+        setupLeagueSpinner(soccerLeagues)
+    }
+
+    private fun initMatchesView() {
         viewpager_main.adapter = FootBallMatchScheduleAdapter(
             fragmentManager, selectedLeagueId,
             resources.getStringArray(R.array.schedule_types)
@@ -71,10 +80,33 @@ class HomeFragment : Fragment(), HomeContract.View {
         tabs_main.show()
     }
 
-    private fun firstInitHomeView() {
-        //first loading
-        viewpager_main.hide()
-        tabs_main.hide()
+    private fun setupLeagueSpinner(soccerLeagues: List<League>) {
+        val thisContext = context
+        if (thisContext == null) {
+            snackbar(
+                home_view_root, getString(R.string.str_generic_error_failed),
+                getString(R.string.str_retry)
+            ) { onGetAllLeaguesSuccess(soccerLeagues) }
+            return
+        }
+
+
+        val spinnerItems = soccerLeagues.map { it -> it.name }
+        val spinnerAdapter = ArrayAdapter(thisContext, android.R.layout.simple_spinner_dropdown_item, spinnerItems)
+        sp_leagues.adapter = spinnerAdapter
+        sp_leagues.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                selectedLeagueId = soccerLeagues[position].id
+                selectedLeagueName = soccerLeagues[position].name
+                SharedPrefs.selectedLeagueId = selectedLeagueId
+                SharedPrefs.selectedLeagueName = selectedLeagueName
+                initMatchesView()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {}
+        }
+        sp_leagues.setSelection(spinnerItems.indexOf(SharedPrefs.selectedLeagueName))
+        sp_leagues.show()
     }
 
 }

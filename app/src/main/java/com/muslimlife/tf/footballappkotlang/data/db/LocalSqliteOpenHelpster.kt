@@ -29,6 +29,7 @@ class LocalSqliteOpenHelpster(context: Context) : ManagedSQLiteOpenHelper(
             DbConstant.Companion.FavoriteMatchTable.Column.matchId to TEXT + UNIQUE,
             DbConstant.Companion.FavoriteMatchTable.Column.matchName to TEXT,
             DbConstant.Companion.FavoriteMatchTable.Column.matchDate to TEXT,
+            DbConstant.Companion.FavoriteMatchTable.Column.matchTime to TEXT,
             DbConstant.Companion.FavoriteMatchTable.Column.homeTeamName to TEXT,
             DbConstant.Companion.FavoriteMatchTable.Column.homeTeamScore to TEXT,
             DbConstant.Companion.FavoriteMatchTable.Column.awayTeamName to TEXT,

@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/base_rv_view_root"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+    <Spinner
+            android:visibility="gone"
+            android:id="@+id/sp_leagues"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_space_size"/>
+
     <android.support.v7.widget.RecyclerView
+            android:layout_below="@id/sp_leagues"
             android:id="@+id/base_rv_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-    />
+            android:layout_height="match_parent"/>
 
     <ProgressBar
             android:id="@+id/base_pb_rv_faragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:layout_centerInParent="true"/>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

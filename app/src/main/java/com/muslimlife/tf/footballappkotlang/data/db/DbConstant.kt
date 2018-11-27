@@ -13,6 +13,7 @@ class DbConstant {
                 const val matchId: String = "matchId"
                 const val matchName: String = "matchName"
                 const val matchDate: String = "matchDate"
+                const val matchTime: String = "matchTime"
                 const val homeTeamName: String = "homeTeamName"
                 const val homeTeamScore: String = "homeTeamScore"
                 const val awayTeamName: String = "awayTeamName"

@@ -13,7 +13,6 @@
         app:elevation="@dimen/small_space_size">
 
     <RelativeLayout
-            android:orientation="vertical"
             android:layout_margin="@dimen/medium_space_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -26,6 +25,26 @@
                 tools:text="28 September 2018"
                 style="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/colorPrimary"/>
+
+        <TextView
+                android:layout_below="@+id/tv_schedule_date"
+                android:id="@+id/tv_schedule_time"
+                style="@style/TextAppearance.AppCompat.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/medium_space_size"
+                tools:text="28 September 2018"
+                android:textColor="@color/colorPrimary"/>
+
+        <ImageView
+                android:id="@+id/iv_schedule_reminder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                android:src="@drawable/ic_add_to_calendar"/>
 
         <RelativeLayout
                 android:id="@+id/rl_match_schedule_container"

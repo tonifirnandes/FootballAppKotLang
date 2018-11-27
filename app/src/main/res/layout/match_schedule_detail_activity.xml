@@ -40,6 +40,15 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/small_space_size"
+                        tools:text="28 September 2018"
+                        android:textColor="@color/colorPrimary"/>
+
+                <TextView
+                        android:id="@+id/tv_match_time"
+                        style="@style/TextAppearance.AppCompat.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:layout_marginBottom="@dimen/small_space_size"
                         tools:text="28 September 2018"
                         android:textColor="@color/colorPrimary"/>
@@ -89,6 +98,15 @@
                                 android:layout_centerHorizontal="true"
 
                                 android:textColor="@color/colorPrimary"
+                                tools:text="Real Madrid"/>
+
+                        <TextView
+                                android:id="@+id/tv_home_team_formation"
+                                style="@style/TextAppearance.AppCompat.Caption"
+                                android:layout_below="@+id/tv_home_team_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
                                 tools:text="Real Madrid"/>
 
                     </RelativeLayout>
@@ -166,6 +184,15 @@
                                 android:layout_centerHorizontal="true"
                                 style="@style/TextAppearance.AppCompat.Medium"
                                 android:textColor="@color/colorPrimary"
+                                tools:text="Real Madrid"/>
+
+                        <TextView
+                                android:id="@+id/tv_away_team_formation"
+                                style="@style/TextAppearance.AppCompat.Caption"
+                                android:layout_below="@+id/tv_away_team_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
                                 tools:text="Real Madrid"/>
 
                     </RelativeLayout>

@@ -21,6 +21,7 @@ class FavoriteMatchLocalDb(private val context: Context) {
                         DbConstant.Companion.FavoriteMatchTable.Column.matchId to data.matchId,
                         DbConstant.Companion.FavoriteMatchTable.Column.matchName to data.matchName,
                         DbConstant.Companion.FavoriteMatchTable.Column.matchDate to data.matchDate,
+                        DbConstant.Companion.FavoriteMatchTable.Column.matchTime to data.matchTime,
                         DbConstant.Companion.FavoriteMatchTable.Column.homeTeamName to data.homeTeamName,
                         DbConstant.Companion.FavoriteMatchTable.Column.homeTeamScore to data.homeTeamScore,
                         DbConstant.Companion.FavoriteMatchTable.Column.awayTeamName to data.awayTeamName,

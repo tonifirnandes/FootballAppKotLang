@@ -12,7 +12,20 @@ fun String.adjustTimePattern(oldPattern: String, newPattern: String): String? {
         dateFormat.applyPattern(newPattern)
         dateFormat.format(calendar.time)
     } catch (e: ParseException) {
-        throw(e)
+        return null
+    }
+}
+
+fun String.adjustTimePatternWithTimezone(oldPattern: String, newPattern: String, timeZoneId: String): String? {
+    val dateFormat = SimpleDateFormat(oldPattern, Locale.getDefault())
+    return try {
+        val calendar = Calendar.getInstance()
+        calendar.timeZone = TimeZone.getTimeZone(timeZoneId)
+        calendar.time = dateFormat.parse(this)
+        dateFormat.applyPattern(newPattern)
+        dateFormat.format(calendar.time)
+    } catch (e: ParseException) {
+        return null
     }
 }
 

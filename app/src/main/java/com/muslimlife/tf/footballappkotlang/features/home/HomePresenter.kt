@@ -2,6 +2,7 @@ package com.muslimlife.tf.footballappkotlang.features.home
 
 import com.muslimlife.tf.footballappkotlang.data.api.FootBallRestConstant
 import com.muslimlife.tf.footballappkotlang.data.api.FootBallRestService
+import com.muslimlife.tf.footballappkotlang.data.preference.SharedPrefs
 import com.muslimlife.tf.footballappkotlang.generics.BasePresenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -21,6 +22,7 @@ class HomePresenter : HomeContract.Presenter, BasePresenter<HomeContract.View>()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe({
+                    SharedPrefs.leaguesData = it
                     view?.onGetAllLeaguesSuccess(it.leagues.filter { league ->
                         league.category ==
                                 FootBallRestConstant.apiSoccerCategory

@@ -26,5 +26,9 @@ class EventFieldKey {
         const val homeTeamName: String = "strHomeTeam"
         const val homeTeamShotsNumber: String = "intHomeShots"
         const val awayTeamShotsNumber: String = "intAwayShots"
+        const val homeTeamFormation: String = "strHomeFormation"
+        const val awayTeamFormation: String = "strAwayFormation"
+        const val eventTime: String = "strTime"
+
     }
 }

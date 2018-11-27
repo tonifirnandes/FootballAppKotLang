@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 style="@style/TextAppearance.AppCompat.Caption"
                 android:layout_gravity="center"
-                android:gravity="right"
+                android:gravity="right|end"
                 tools:text="@string/str_versus"/>
 
     </LinearLayout>
