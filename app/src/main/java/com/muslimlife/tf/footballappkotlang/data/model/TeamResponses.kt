@@ -11,7 +11,7 @@ data class Team(
     @SerializedName(TeamFieldKey.leagueId)
     val leagueId: String,
     @SerializedName(TeamFieldKey.badgeUrl)
-    val badgeUrl: String,
+    val badgeUrl: String?,
     @SerializedName(TeamFieldKey.id)
     var id: String,
     @SerializedName(TeamFieldKey.descriptionInEnglish)
@@ -19,7 +19,9 @@ data class Team(
     @SerializedName(TeamFieldKey.stadiumName)
     var stadiumName: String?,
     @SerializedName(TeamFieldKey.name)
-    var name: String,
+    var name: String?,
     @SerializedName(TeamFieldKey.establishedYear)
-    var establishedYear: String
+    var establishedYear: String?,
+    @SerializedName(TeamFieldKey.category)
+    var category: String?
 ) : Parcelable

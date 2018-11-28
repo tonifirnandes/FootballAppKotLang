@@ -36,5 +36,6 @@ data class Event(
     @SerializedName(EventFieldKey.awayTeamShotsNumber) val awayTeamShotsNumber: String?,
     @SerializedName(EventFieldKey.homeTeamFormation) val homeTeamFormation: String?,
     @SerializedName(EventFieldKey.awayTeamFormation) val awayTeamFormation: String?,
-    @SerializedName(EventFieldKey.eventTime) val time: String?
+    @SerializedName(EventFieldKey.eventTime) val time: String?,
+    @SerializedName(EventFieldKey.category) val category: String?
 ) : Parcelable

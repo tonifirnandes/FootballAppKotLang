@@ -57,8 +57,8 @@ class TeamDetailPresenter(private val scheduler: BaseSchedulerProvider) :
                 FavoriteTeam(
                     id = null,
                     teamId = team.id,
-                    teamName = team.name,
-                    teamLogoUrl = team.badgeUrl
+                    teamName = team.name ?: "",
+                    teamLogoUrl = team.badgeUrl ?: ""
                 )
             )
                 .observeOn(scheduler.ui())

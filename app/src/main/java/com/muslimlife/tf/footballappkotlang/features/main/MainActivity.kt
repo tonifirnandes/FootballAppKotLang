@@ -18,11 +18,15 @@ class MainActivity : AppCompatActivity() {
         bnv_main.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_home -> {
-                    replaceContainer(HomeFragment.newInstance())
+                    val homeFragment = HomeFragment.newInstance()
+                    homeFragment.forceHavingControlToActionBar(supportActionBar)
+                    replaceContainer(homeFragment)
                     true
                 }
                 R.id.nav_team -> {
-                    replaceContainer(TeamsFragment.newInstance())
+                    val teamFragment = TeamsFragment.newInstance()
+                    teamFragment.forceHavingControlToActionBar(supportActionBar)
+                    replaceContainer(teamFragment)
                     true
                 }
                 R.id.nav_favorite -> {

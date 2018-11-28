@@ -70,7 +70,7 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
 
     }
 
-    override fun onGetHomeTeamBadgeSuccess(url: String) {
+    override fun onGetHomeTeamBadgeSuccess(url: String?) {
         pb_home_team_logo.hide()
         Glide.with(iv_home_team_logo)
             .load(url)
@@ -82,7 +82,7 @@ class MatchScheduleDetailActivity : AppCompatActivity(), MatchScheduleDetailCont
         pb_home_team_logo.hide()
     }
 
-    override fun onGetAwayTeamBadgeSuccess(url: String) {
+    override fun onGetAwayTeamBadgeSuccess(url: String?) {
         pb_away_team_logo.hide()
         Glide.with(iv_away_team_logo)
             .load(url)

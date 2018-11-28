@@ -5,18 +5,41 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <Spinner
-            android:visibility="gone"
-            android:id="@+id/sp_leagues"
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/rl_main_teams"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/medium_space_size"/>
+            android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
-            android:layout_below="@id/sp_leagues"
-            android:id="@+id/base_rv_list"
+        <Spinner
+                android:visibility="gone"
+                android:id="@+id/sp_leagues"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/medium_space_size"/>
+
+        <android.support.v7.widget.RecyclerView
+                android:layout_below="@id/sp_leagues"
+                android:id="@+id/base_rv_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:visibility="gone"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/rl_search_teams"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_search_teams"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+    </RelativeLayout>
 
     <ProgressBar
             android:id="@+id/base_pb_rv_faragment"

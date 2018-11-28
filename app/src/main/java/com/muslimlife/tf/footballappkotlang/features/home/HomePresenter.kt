@@ -33,4 +33,26 @@ class HomePresenter : HomeContract.Presenter, BasePresenter<HomeContract.View>()
         )
     }
 
+    override fun findMatches(eventSearched: String) {
+        view?.showFindMatchesLoading()
+        //force remove previous action
+        compositeDisposable.clear()
+        compositeDisposable.add(
+            service.searchMatchesByEventName(eventSearched)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe({
+                    val found = it.event.filter { event -> event.category == FootBallRestConstant.apiSoccerCategory }
+                    if (found.isEmpty()) {
+                        view?.onNotFoundMatches()
+                    } else {
+                        view?.onFoundMathces(found)
+                    }
+
+                }, {
+                    view?.onNotFoundMatches()
+                })
+        )
+    }
+
 }

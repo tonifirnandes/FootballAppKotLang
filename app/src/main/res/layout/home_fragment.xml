@@ -6,26 +6,52 @@
         android:layout_height="match_parent"
         android:background="@android:color/transparent">
 
-    <android.support.design.widget.TabLayout
-            android:visibility="gone"
-            android:id="@+id/tabs_main"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+    <!--Refactor: divide into two main view, while searching and not-->
 
-    <Spinner
-            android:visibility="gone"
-            android:layout_below="@id/tabs_main"
-            android:id="@+id/sp_leagues"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/medium_space_size"/>
-
-    <android.support.v4.view.ViewPager
-            android:visibility="gone"
-            android:id="@+id/viewpager_main"
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/rl_main_matches"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/sp_leagues"/>
+            android:background="@android:color/transparent">
+
+        <android.support.design.widget.TabLayout
+                android:visibility="gone"
+                android:id="@+id/tabs_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <Spinner
+                android:visibility="gone"
+                android:layout_below="@id/tabs_main"
+                android:id="@+id/sp_leagues"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/medium_space_size"/>
+
+        <android.support.v4.view.ViewPager
+                android:visibility="gone"
+                android:id="@+id/viewpager_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/sp_leagues"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:visibility="gone"
+            android:id="@+id/rl_search_matches"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent">
+
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_search_match_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+    </RelativeLayout>
 
     <ProgressBar
             android:layout_centerInParent="true"

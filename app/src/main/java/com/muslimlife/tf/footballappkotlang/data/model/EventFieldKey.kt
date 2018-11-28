@@ -29,6 +29,7 @@ class EventFieldKey {
         const val homeTeamFormation: String = "strHomeFormation"
         const val awayTeamFormation: String = "strAwayFormation"
         const val eventTime: String = "strTime"
+        const val category: String = "strSport"
 
     }
 }

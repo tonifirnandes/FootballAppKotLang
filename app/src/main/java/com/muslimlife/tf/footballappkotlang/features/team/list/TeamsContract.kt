@@ -9,9 +9,13 @@ interface TeamsContract {
         fun showGetTeamsLoading()
         fun onGetTeamsSuccess(teamList: List<Team>)
         fun onGetTeamsFailed()
+        fun showSearchTeamsLoading()
+        fun onFoundTeams(newFoundTeams: List<Team>)
+        fun onNotFoundTeams()
     }
 
     interface Presenter : BaseMvpPresenter<TeamsContract.View> {
         fun getTeamsByLeagueId(leagueId: String)
+        fun findTeams(searchedTeamName: String)
     }
 }

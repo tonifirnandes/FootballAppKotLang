@@ -45,4 +45,10 @@
     <!--player details-->
     <string name="str_player_weight_title">Weight (Kg)</string>
     <string name="str_player_height_title">Height (m)</string>
+
+    <!--search-->
+    <string name="str_search_menu">Search</string>
+    <string name="str_search_matches_hint">Find Matches</string>
+    <string name="str_search_teams_hint">Find Teams</string>
+
 </resources>

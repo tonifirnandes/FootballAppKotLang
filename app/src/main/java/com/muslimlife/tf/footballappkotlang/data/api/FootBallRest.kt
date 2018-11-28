@@ -33,7 +33,4 @@ interface FootBallRest {
 
     @GET(FootBallRestConstant.allPlayersEndPoint)
     fun getAllPlayersByTeamId(@Query(FootBallRestConstant.queryParamsId) id: String?): Flowable<FootBallPlayerList>
-
-    @GET(FootBallRestConstant.playerDetailByIdEndPoint)
-    fun getPlayerDetailById(@Query(FootBallRestConstant.queryParamsId) id: String?): Flowable<FootBallPlayerDetail>
 }
