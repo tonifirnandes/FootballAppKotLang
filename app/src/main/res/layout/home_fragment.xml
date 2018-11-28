@@ -33,7 +33,7 @@
                 android:visibility="gone"
                 android:id="@+id/viewpager_main"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/sp_leagues"/>
 
     </RelativeLayout>

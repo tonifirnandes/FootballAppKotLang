@@ -85,8 +85,8 @@ class HomeFragment : Fragment(), HomeContract.View {
             ) { onGetAllLeaguesSuccess(soccerLeagues) }
             return
         }
-        initMatchesView()
         setupLeagueSpinner(soccerLeagues)
+        initMatchesView()
     }
 
     override fun showFindMatchesLoading() {
@@ -137,7 +137,7 @@ class HomeFragment : Fragment(), HomeContract.View {
 
             override fun onNothingSelected(parent: AdapterView<*>) {}
         }
-        sp_leagues.setSelection(spinnerItems.indexOf(SharedPrefs.selectedLeagueName))
+        sp_leagues.setSelection(spinnerItems.indexOf(SharedPrefs.selectedLeagueName), true)
         sp_leagues.show()
     }
 

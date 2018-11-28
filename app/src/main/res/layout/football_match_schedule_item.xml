@@ -17,40 +17,47 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <TextView
-                android:id="@+id/tv_schedule_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                tools:text="28 September 2018"
-                style="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/colorPrimary"/>
+        <RelativeLayout
+                android:id="@+id/rl_matches_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <TextView
-                android:layout_below="@+id/tv_schedule_date"
-                android:id="@+id/tv_schedule_time"
-                style="@style/TextAppearance.AppCompat.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="@dimen/medium_space_size"
-                tools:text="28 September 2018"
-                android:textColor="@color/colorPrimary"/>
+            <TextView
+                    android:id="@+id/tv_schedule_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    tools:text="28 September 2018"
+                    style="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorPrimary"/>
 
-        <ImageView
-                android:id="@+id/iv_schedule_reminder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:visibility="gone"
-                android:src="@drawable/ic_add_to_calendar"/>
+            <TextView
+                    android:layout_below="@+id/tv_schedule_date"
+                    android:id="@+id/tv_schedule_time"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    tools:text="28 September 2018"
+                    android:textColor="@color/colorPrimary"/>
+
+            <ImageView
+                    android:id="@+id/iv_schedule_reminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:visibility="gone"
+                    android:padding="@dimen/medium_space_size"
+                    android:src="@drawable/ic_add_to_calendar"/>
+
+        </RelativeLayout>
 
         <RelativeLayout
                 android:id="@+id/rl_match_schedule_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_schedule_date">
+                android:layout_below="@+id/rl_matches_head">
 
             <TextView
                     android:id="@+id/tv_hometeam_name"

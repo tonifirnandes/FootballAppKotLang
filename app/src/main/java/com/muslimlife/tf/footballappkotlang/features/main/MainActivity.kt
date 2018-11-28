@@ -40,10 +40,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         bnv_main.selectedItemId = R.id.nav_home
-
     }
 
     private fun replaceContainer(fragment: Fragment) {
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fl_fragment_container, fragment, fragment.javaClass.simpleName)
