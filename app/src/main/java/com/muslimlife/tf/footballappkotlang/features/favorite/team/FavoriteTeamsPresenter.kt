@@ -30,30 +30,3 @@ class FavoriteTeamsPresenter : FavoriteTeamContract.Presenter, BasePresenter<Fav
     }
 
 }
-
-
-//class FavoritesMatchPresenter
-//    : FavoritesMatchContract.Presenter, BasePresenter<FavoritesMatchContract.View>() {
-//
-//    private var compositeDisposable = CompositeDisposable()
-//
-//    override fun getSavedFavoritesMatchLocally(context: Context?) {
-//        if (context == null) {
-//            view?.onGetFavoritesMatchFailed()
-//            return
-//        }
-//        view?.showGetFavoritesMatchLoading()
-//        compositeDisposable.add(
-//            FavoriteMatchLocalDb(context).readAll()
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribeOn(Schedulers.io())
-//                .subscribe({
-//                    view?.onGetFavoritesMatchSuccess(it)
-//                }, {
-//                    view?.onGetFavoritesMatchFailed()
-//                })
-//        )
-//
-//    }
-//
-//}
