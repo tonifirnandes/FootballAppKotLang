@@ -50,7 +50,8 @@ class MatchScheduleDetailPresenterTest {
             homeTeamScore = null,
             awayTeamName = "",
             awayTeamScore = null,
-            matchDate = ""
+            matchDate = "",
+            matchTime = ""
         )
     }
 
