@@ -2,6 +2,7 @@ package com.muslimlife.tf.footballappkotlang.data.api
 
 import org.junit.Before
 import org.junit.Test
+import org.mockito.ArgumentMatchers
 import org.mockito.Mock
 import org.mockito.Mockito.never
 import org.mockito.Mockito.verify
@@ -100,5 +101,29 @@ class FootBallRestKtTest {
     fun getAllLeagues_isWrongMethodCalled() {
         footBallRest.getAllLeagues()
         verify(footBallRest, never()).getMatchDetailById("123")
+    }
+
+    @Test
+    fun searchMatchesByEventName_isValid() {
+        footBallRest.searchMatchesByEventName(ArgumentMatchers.anyString())
+        verify(footBallRest).searchMatchesByEventName(ArgumentMatchers.anyString())
+    }
+
+    @Test
+    fun searchTeamsByTeamName_isValid() {
+        footBallRest.searchTeamsByTeamName(ArgumentMatchers.anyString())
+        verify(footBallRest).searchTeamsByTeamName(ArgumentMatchers.anyString())
+    }
+
+    @Test
+    fun getAllTeamsByLeagueId_isValid() {
+        footBallRest.getAllTeamsByLeagueId(ArgumentMatchers.anyString())
+        verify(footBallRest).getAllTeamsByLeagueId(ArgumentMatchers.anyString())
+    }
+
+    @Test
+    fun getAllPlayersByTeamId_isValid() {
+        footBallRest.getAllPlayersByTeamId(ArgumentMatchers.anyString())
+        verify(footBallRest).getAllPlayersByTeamId(ArgumentMatchers.anyString())
     }
 }
